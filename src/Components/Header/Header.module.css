@@ -1,0 +1,67 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.logo_block {
+    flex: 0 1 15%;
+}
+
+.logo_block img {
+    width: 130px;
+    height: 72px;
+    cursor: pointer;
+}
+
+.nav {
+    flex: 0 1 40%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_item {
+    color: #FFFFFF;
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-transform: uppercase;
+}
+
+.activeMenu_item {
+    color: #FFCD00;
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-transform: uppercase;
+}
+
+.links {
+    color: #FFFFFF;
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-transform: uppercase;
+}
+
+.connect_btn {
+    width: 218px;
+    height: 39px;
+    border-radius: 10px;
+    background: #FFFFFF4D;
+    color: #FFCD00;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    line-height: 18.96px;
+}
