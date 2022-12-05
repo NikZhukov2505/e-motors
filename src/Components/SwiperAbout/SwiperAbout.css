@@ -1,0 +1,77 @@
+.SwiperAbout {
+    height: 70vh;
+}
+
+.about_box-img img {
+    width: 100%;
+    aspect-ratio: 17/13;
+    object-fit: cover;
+
+}
+
+.slideAbout-Card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about_box-img,
+.about_box-title {
+    flex: 0 1 50%;
+    background: #001D3D;
+}
+
+.about_box-img img {
+    width: 100%;
+}
+
+.about_box-title h2,
+.about_box-title p {
+    font-family: 'Gotham', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.about_box-title h2 {
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 7%;
+}
+
+.about_box-title p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.about_box-title {
+    display: flex;
+    align-items: center;
+}
+
+.about_center-box-title {
+    width: 80%;
+    height: 60vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.SwiperAbout .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 10%;
+    left: 7%;
+}
+
+
+
+.SwiperAbout .swiper-pagination-bullet-active,
+.SwiperAbout .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #FFFFFF;
+}
+
+.SwiperAbout .swiper-pagination-bullet-active {
+    background: #FFFFFF;
+}
