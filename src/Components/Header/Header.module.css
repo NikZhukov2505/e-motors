@@ -45,6 +45,24 @@
     text-transform: uppercase;
 }
 
+.menu_item button {
+    color: #FFFFFF;
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-transform: uppercase;
+}
+
+.activeMenu_item button {
+    color: #FFCD00;
+    font-family: 'Gotham', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-transform: uppercase;
+}
+
 .links {
     color: #FFFFFF;
     font-family: 'Gotham', sans-serif;
