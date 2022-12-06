@@ -1,0 +1,48 @@
+.SwiperDetail {
+    width: 1000px;
+    height: 60vh;
+}
+
+.SwiperDetail .swiperCardDetail img {
+    width: 100%;
+    aspect-ratio: 20/13;
+    object-fit: cover;
+}
+
+.SwiperDetail_mini {
+    width: 1000px;
+}
+
+.SwiperCardDetail_mini {
+    width: 100px;
+    margin: 10px 5px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.SwiperCardDetail_mini img {
+    width: 100%;
+    aspect-ratio: 7/5;
+    object-fit: cover;
+}
+
+.SwiperDetail .swiper-button-prev,
+.SwiperDetail .swiper-button-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 7, 62, 0.5);
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.SwiperDetail .swiper-button-prev::after,
+.SwiperDetail .swiper-button-next::after {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.SwiperDetail .swiper-button-prev:hover,
+.SwiperDetail .swiper-button-next:hover {
+    transform: scale(1.1);
+}

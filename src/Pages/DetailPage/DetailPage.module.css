@@ -1,0 +1,14 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.box_character {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box_character_img {
+    flex: 0 1 60%;
+}
