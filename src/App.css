@@ -8,3 +8,7 @@
 body {
     background-color: #000814;
 }
+
+.lg-backdrop.in {
+    background: rgba(0, 0, 0, 0.7);
+}
