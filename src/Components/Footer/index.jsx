@@ -4,28 +4,26 @@ import logo from './../../assets/logo.png'
 import telegram from './../../assets/telegram.png'
 import whatsapp from './../../assets/whatsapp.png'
 import instagram from './../../assets/instagram.png'
+import { Link } from 'react-scroll';
 
 const Footer = () => {
 
-    const handlerScrollUp = () => {
-        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth',
-
-            });
-        }
-    }
     return (
-        <footer className={styles.footer}>
+        <footer id='contacts' className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.box_logo}>
-                    <img className={styles.btn_scroll_up} onClick={handlerScrollUp} src={logo} alt="logo" />
+                    <Link spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={1500}
+                        to={'top'}
+                    >
+                        <img className={styles.btn_scroll_up} src={logo} alt="logo" />
+                    </Link>
                 </div>
                 <div className={styles.box_contact}>
                     <div className={styles.box_contact_info}>
-                        <p id={styles.contact_number}>+996 (552) 343 656</p>
+                        <p ><a id={styles.contact_number} href="tel:+996 (552) 343 656">+996 (552) 343 656</a></p>
                     </div>
                     <div className={styles.box_contact_info}>
                         <p>Наш адресс:</p>

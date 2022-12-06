@@ -4,7 +4,7 @@ import styles from './CatalogPage.module.css'
 
 const CatalogPage = () => {
     return (
-        <div>
+        <div className={styles.wrapper_catalog}>
             CatalogPage
         </div>
     );

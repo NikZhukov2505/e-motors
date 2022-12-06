@@ -1,16 +1,15 @@
 import React from 'react';
 import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { WavyLink } from 'react-wavy-transitions';
-
+import { Link, animateScroll as scroll } from "react-scroll";
+import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
     const location = useLocation()
-    console.log(location);
-
     return (
-        <header className={styles.header}>
+        <header id='top' className={styles.header}>
             <div className={styles.logo_block}>
                 <WavyLink duration={700} color='#000' to={'/'}><img src={logo} alt="e_motors_logo" /></WavyLink>
             </div>
@@ -34,8 +33,13 @@ const Header = () => {
                             {/* </NavLink> */}
                         </WavyLink>
                     </li>
-                    <li><a className={styles.links} href='/#about-us'>О нас</a></li>
-                    <li><a className={styles.links} href='/#contacts'>Контакты</a></li>
+                    <li><HashLink to={'/#about-us'} className={styles.links} >О нас</HashLink></li>
+                    <li><Link
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        activeClass={'active'}
+                        duration={1500} className={styles.links} to='contacts'>Контакты</Link></li>
                 </ul>
             </nav>
             <div className={styles.connect_block}>

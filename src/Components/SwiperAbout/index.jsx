@@ -10,7 +10,7 @@ import teslaSwiperAbout from './../../assets/teslaSwiperAbout.jpg'
 
 const SwiperAbout = () => {
     return (
-        <Swiper className='SwiperAbout'
+        <Swiper id='about-us' className='SwiperAbout'
             modules={[Pagination, A11y, Autoplay, Keyboard, EffectFade]}
             spaceBetween={100}
             slidesPerView={1}
