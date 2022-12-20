@@ -3,9 +3,7 @@ import './SwiperDetail.css'
 import { FreeMode, Navigation, Thumbs, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
-import slideImg1 from './../../../assets/swiper3.jpg'
-import slideImg2 from './../../../assets/teslaBg.jpg'
-import slideImg3 from './../../../assets/teslaSwiperAbout.jpg'
+import parts from './../../../assets/parts.png'
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
@@ -13,7 +11,7 @@ import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 
-const SwiperDetail = () => {
+const SwiperDetailParts = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <LightGallery
@@ -26,40 +24,28 @@ const SwiperDetail = () => {
                 style={{
                     "--swiper-navigation-color": "#FFCD00",
                     "--swiper-pagination-color": "#FFCD00",
-
                 }}
                 loop={true}
                 navigation={true}
                 keyboard
                 thumbs={{ swiper: thumbsSwiper }}
-                className='SwiperDetail'
+                className='SwiperDetailParts'
             >
                 <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg1}>
-                        <img src={slideImg1} alt={"slidemotors"} />
+                    <a className='gallery_item' href={parts}>
+                        <img src={parts} alt={'parts'} />
                     </a>
                 </SwiperSlide>
                 <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg2}>
-                        <img src={slideImg2} alt={"slidemotors"} />
+                    <a className='gallery_item' href={parts}>
+                        <img src={parts} alt={'parts'} />
                     </a>
                 </SwiperSlide>
                 <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg3}>
-                        <img src={slideImg3} alt={"slidemotors"} />
+                    <a className='gallery_item' href={parts}>
+                        <img src={parts} alt={'parts'} />
                     </a>
                 </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg1}>
-                        <img src={slideImg1} alt={"slidemotors"} />
-                    </a>
-                </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg2}>
-                        <img src={slideImg2} alt={"slidemotors"} />
-                    </a>
-                </SwiperSlide>
-
             </Swiper>
             <Swiper
                 onSwiper={setThumbsSwiper}
@@ -69,28 +55,20 @@ const SwiperDetail = () => {
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="SwiperDetail_mini"
-
+                className="SwiperDetailParts_mini"
             >
                 <SwiperSlide className='SwiperCardDetail_mini' >
-                    <img src={slideImg1} alt={"slidemotors"} />
+                    <img src={parts} alt={'parts'} />
                 </SwiperSlide>
                 <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={slideImg2} alt={"slidemotors"} />
+                    <img src={parts} alt={'parts'} />
                 </SwiperSlide>
                 <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={slideImg3} alt={"slidemotors"} />
+                    <img src={parts} alt={'parts'} />
                 </SwiperSlide>
-                <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={slideImg1} alt={"slidemotors"} />
-                </SwiperSlide>
-                <SwiperSlide className='SwiperCardDetail_mini' >
-                    <img src={slideImg2} alt={"slidemotors"} />
-                </SwiperSlide>
-
             </Swiper>
         </LightGallery>
     );
 };
 
-export default SwiperDetail;
+export default SwiperDetailParts;
