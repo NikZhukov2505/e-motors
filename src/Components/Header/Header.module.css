@@ -83,4 +83,15 @@
     font-weight: 400;
     font-family: 'Rubik', sans-serif;
     line-height: 18.96px;
+    transition: 0.3s;
+}
+
+.connect_btn:hover {
+    background: #FFCD00;
+    color: #000;
+}
+
+.connect_btn:active {
+    background: #000;
+    color: #FFCD00;
 }

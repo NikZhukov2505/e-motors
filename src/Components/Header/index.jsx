@@ -40,6 +40,9 @@ const Header = () => {
                         offset={-70}
                         activeClass={'active'}
                         duration={1500} className={styles.links} to='contacts'>Контакты</Link></li>
+                    <li className={location.pathname == '/parts' ? styles.activeMenu_item : styles.menu_item}>
+                        <WavyLink duration={700} color={'#000'} to={'/parts'}>дополнительное</WavyLink>
+                    </li>
                 </ul>
             </nav>
             <div className={styles.connect_block}>
