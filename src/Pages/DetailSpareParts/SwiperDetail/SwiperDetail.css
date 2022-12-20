@@ -1,16 +1,16 @@
-.SwiperDetail {
+.SwiperDetailParts {
     width: 1050px;
     height: 60vh;
     border-radius: 10px;
 }
 
-.SwiperDetail .swiperCardDetail img {
+.SwiperDetailParts .swiperCardDetail img {
     width: 100%;
-    aspect-ratio: 20/13;
+    aspect-ratio: 26/13;
     object-fit: cover;
 }
 
-.SwiperDetail_mini {
+.SwiperDetailParts_mini {
     width: 1050px;
 
 }
@@ -29,8 +29,8 @@
     object-fit: cover;
 }
 
-.SwiperDetail .swiper-button-prev,
-.SwiperDetail .swiper-button-next {
+.SwiperDetailParts .swiper-button-prev,
+.SwiperDetailParts .swiper-button-next {
     width: 50px;
     height: 50px;
     background: rgba(0, 7, 62, 0.5);
@@ -38,17 +38,17 @@
     transition: .5s;
 }
 
-.SwiperDetail .swiper-button-prev::after,
-.SwiperDetail .swiper-button-next::after {
+.SwiperDetailParts .swiper-button-prev::after,
+.SwiperDetailParts .swiper-button-next::after {
     font-size: 30px;
     font-weight: 600;
 }
 
-.SwiperDetail .swiper-button-prev:hover,
-.SwiperDetail .swiper-button-next:hover {
+.SwiperDetailParts .swiper-button-prev:hover,
+.SwiperDetailParts .swiper-button-next:hover {
     transform: scale(1.1);
 }
 
-.SwiperDetail_mini .swiper-slide-thumb-active {
+.SwiperDetailParts_mini .swiper-slide-thumb-active {
     border: 3px solid #FFCD00;
 }

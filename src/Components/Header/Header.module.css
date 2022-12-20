@@ -84,3 +84,9 @@
     font-family: 'Rubik', sans-serif;
     line-height: 18.96px;
 }
+
+@media (min-width:1920px) {
+    header {
+        width: 1440px;
+    }
+}
