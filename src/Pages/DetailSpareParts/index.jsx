@@ -1,24 +1,19 @@
 import React from 'react';
-import { useEffect } from 'react';
 import styles from './DetailPage.module.css'
-import SwiperDetail from './SwiperDetail/index';
-import Description from './Description/index';
+import SwiperDetailParts from './SwiperDetail/index';
+import DetailSpareParts from './Description/index';
 
 
-const DetailPage = () => {
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+const DetailPageParts = () => {
     return (
         <div className={styles.container}>
             <div className={styles.box_character}>
                 <div className={styles.box_character_img}>
-                    <SwiperDetail />
+                    <SwiperDetailParts />
                 </div>
                 <div className={styles.box_character_title}>
                     <div className={styles.title_character}>
-                        <h2>Honda M-NV (топовая комплектация)</h2>
+                        <h2>провод M-NV (топовый зуб даю)</h2>
                     </div>
                     <div className={styles.title_character}></div>
                     <div className={styles.title_character}>
@@ -26,9 +21,9 @@ const DetailPage = () => {
                     </div>
                 </div>
             </div>
-            <Description />
+            <DetailSpareParts />
         </div>
     );
 };
 
-export default DetailPage;
+export default DetailPageParts;

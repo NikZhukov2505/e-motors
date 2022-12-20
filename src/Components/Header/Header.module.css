@@ -95,3 +95,9 @@
     background: #000;
     color: #FFCD00;
 }
+
+@media (min-width:1920px) {
+    header {
+        width: 1440px;
+    }
+}
