@@ -98,6 +98,9 @@
     position: relative;
     width: 100%;
     transition: .5s;
+    margin-bottom: 30px;
+    box-shadow: -2px -2px 28px #001529,
+        2px 2px 28px #0055a3;
 }
 
 .card button {
