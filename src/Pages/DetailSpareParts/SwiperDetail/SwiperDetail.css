@@ -6,13 +6,17 @@
 
 .SwiperDetailParts .swiperCardDetail img {
     width: 100%;
-    aspect-ratio: 26/13;
+    aspect-ratio: 20/13;
     object-fit: cover;
 }
 
-.SwiperDetailParts_mini {
-    width: 1050px;
 
+
+.SwiperDetailParts_mini {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1050px;
+    margin-left: 0px;
 }
 
 .SwiperCardDetail_mini {

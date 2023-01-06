@@ -32,3 +32,17 @@
 .SwiperTop .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 0;
 }
+
+
+@media (max-width:767px) {
+    .SwiperTop {
+        height: 35vh;
+    }
+
+    .slideCard img {
+        aspect-ratio: 6/4;
+        object-fit: cover;
+        object-position: 40% bottom;
+    }
+
+}

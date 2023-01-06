@@ -51,21 +51,23 @@ const Catalog = () => {
                             </div>
                             <p>Электротранспорт</p>
                         </Link>
-                        <div className={`${styles.card_categories} animate__flipInY animate__animated`}>
+                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`}>
                             <div className={styles.item_card}>
                                 <img src={sircleCatalog} alt="sircleCatalog" />
                             </div>
-                        </div>
-                        <div className={`${styles.card_categories} animate__flipInY animate__animated`}>
+                        </Link>
+                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`}>
                             <div className={styles.item_card}>
                                 <img src={sircleCatalog} alt="sircleCatalog" />
                             </div>
-                        </div>
-                        <div className={`${styles.card_categories} animate__flipInY animate__animated`}>
+                            <p></p>
+                        </Link>
+                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`}>
                             <div className={styles.item_card}>
                                 <img src={sircleCatalog} alt="sircleCatalog" />
                             </div>
-                        </div>
+                            <p></p>
+                        </Link>
                     </>
 
                 }
