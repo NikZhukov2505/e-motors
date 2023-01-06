@@ -5,6 +5,8 @@ import { setPartsLiName, setPartsName } from './../../redux/reducers/motorsReduc
 import dropDown from '../../assets/dropDown.png'
 import 'animate.css'
 import PartsCard from './PartsCard';
+import ListFilter from './../CatalogPage/ListFilter/index';
+
 
 const PartsPage = () => {
     const [stations, setStations] = useState(false)
@@ -37,11 +39,7 @@ const PartsPage = () => {
                         </div>
                         {
                             stations ?
-                                <div className={`${styles.subcategories} animate__animated animate__fadeInLeft`}>
-                                    <li onClick={() => showActivePartsLi('stations', 'all')} className={partsName == 'stations' && partsLiName == 'all' ? `${styles.active} ${styles.radio}` : styles.radio}>Все</li>
-                                    <li onClick={() => showActivePartsLi('stations', 'in_stock')} className={partsName == 'stations' && partsLiName == 'in_stock' ? `${styles.active} ${styles.radio}` : styles.radio}>В наличии</li>
-                                    <li onClick={() => showActivePartsLi('stations', 'on_order')} className={partsName == 'stations' && partsLiName == 'on_order' ? `${styles.active} ${styles.radio}` : styles.radio}>Под заказ</li>
-                                </div>
+                                <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={'stations'} />
                                 :
                                 null
                         }
@@ -53,11 +51,7 @@ const PartsPage = () => {
                         </div>
                         {
                             parts ?
-                                <div className={`${styles.subcategories} animate__animated animate__fadeInLeft`}>
-                                    <li onClick={() => showActivePartsLi('parts', 'all')} className={partsName == 'parts' && partsLiName == 'all' ? `${styles.active} ${styles.radio}` : styles.radio}>Все</li>
-                                    <li onClick={() => showActivePartsLi('parts', 'in_stock')} className={partsName == 'parts' && partsLiName == 'in_stock' ? `${styles.active} ${styles.radio}` : styles.radio}>В наличии</li>
-                                    <li onClick={() => showActivePartsLi('parts', 'on_order')} className={partsName == 'parts' && partsLiName == 'on_order' ? `${styles.active} ${styles.radio}` : styles.radio}>Под заказ</li>
-                                </div>
+                                <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={'parts'} />
                                 :
                                 null
                         }

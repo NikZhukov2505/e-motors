@@ -10,7 +10,7 @@
 }
 
 .box_logo {
-    flex: 0 1 13%;
+    flex: 0 1 10%;
 }
 
 .box_logo img {
@@ -28,6 +28,7 @@
 }
 
 
+.box_contact_info a,
 .box_contact_info p {
     text-align: end;
     font-family: 'Gotham', sans-serif;

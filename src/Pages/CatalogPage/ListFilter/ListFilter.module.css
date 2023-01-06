@@ -1,0 +1,17 @@
+.subcategories {
+    transition: 0.6s all;
+}
+
+.radio {
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 400;
+    margin: 10px 0;
+    line-height: 21.6px;
+    cursor: pointer;
+}
+
+.active {
+    color: #FFCD00;
+}

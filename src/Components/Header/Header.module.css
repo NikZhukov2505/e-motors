@@ -101,3 +101,14 @@
         width: 1440px;
     }
 }
+
+
+@media (max-width:767px) {
+    .nav {
+        display: none;
+    }
+
+    .connect_block {
+        display: none;
+    }
+}

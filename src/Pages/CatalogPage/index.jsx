@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryName, setLiName } from './../../redux/reducers/motorsReducer';
 import Card from './Card';
+import ListFilter from './ListFilter';
 
 const CatalogPage = () => {
     const [mobile, setMobile] = useState(false)
@@ -42,11 +43,7 @@ const CatalogPage = () => {
                         </div>
                         {
                             mobile ?
-                                <div className={`${styles.subcategories} animate__animated animate__fadeInLeft`}>
-                                    <li onClick={() => showActiveLi('electro', 'all')} className={categoryName == 'electro' && liName == 'all' ? `${styles.active} ${styles.radio}` : styles.radio}>Все</li>
-                                    <li onClick={() => showActiveLi('electro', 'in_stock')} className={categoryName == 'electro' && liName == 'in_stock' ? `${styles.active} ${styles.radio}` : styles.radio}>В наличии</li>
-                                    <li onClick={() => showActiveLi('electro', 'on_order')} className={categoryName == 'electro' && liName == 'on_order' ? `${styles.active} ${styles.radio}` : styles.radio}>Под заказ</li>
-                                </div>
+                                <ListFilter showActiveLi={showActiveLi} categoryName={categoryName} liNameCategory={liName} category={'electro'} />
                                 :
                                 null
                         }
@@ -58,11 +55,7 @@ const CatalogPage = () => {
                         </div>
                         {
                             scuter ?
-                                <div className={`${styles.subcategories} animate__animated animate__fadeInLeft`}>
-                                    <li onClick={() => showActiveLi('scuter', 'all')} className={categoryName == 'scuter' && liName == 'all' ? `${styles.active} ${styles.radio}` : styles.radio}>Все</li>
-                                    <li onClick={() => showActiveLi('scuter', 'in_stock')} className={categoryName == 'scuter' && liName == 'in_stock' ? `${styles.active} ${styles.radio}` : styles.radio}>В наличии</li>
-                                    <li onClick={() => showActiveLi('scuter', 'on_order')} className={categoryName == 'scuter' && liName == 'on_order' ? `${styles.active} ${styles.radio}` : styles.radio}>Под заказ</li>
-                                </div>
+                                <ListFilter showActiveLi={showActiveLi} categoryName={categoryName} liNameCategory={liName} category={'scuter'} />
                                 :
                                 null
                         }
@@ -74,11 +67,7 @@ const CatalogPage = () => {
                         </div>
                         {
                             transport ?
-                                <div className={`${styles.subcategories} animate__animated animate__fadeInLeft`}>
-                                    <li onClick={() => showActiveLi('transport', 'all')} className={categoryName == 'transport' && liName == 'all' ? `${styles.active} ${styles.radio}` : styles.radio}>Все</li>
-                                    <li onClick={() => showActiveLi('transport', 'in_stock')} className={categoryName == 'transport' && liName == 'in_stock' ? `${styles.active} ${styles.radio}` : styles.radio}>В наличии</li>
-                                    <li onClick={() => showActiveLi('transport', 'on_order')} className={categoryName == 'transport' && liName == 'on_order' ? `${styles.active} ${styles.radio}` : styles.radio}>Под заказ</li>
-                                </div>
+                                <ListFilter showActiveLi={showActiveLi} categoryName={categoryName} liNameCategory={liName} category={'transport'} />
                                 :
                                 null
                         }

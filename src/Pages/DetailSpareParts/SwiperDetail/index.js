@@ -4,6 +4,7 @@ import { FreeMode, Navigation, Thumbs, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import parts from './../../../assets/parts.png'
+import parts2 from './../../../assets/teslaBg.jpg'
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
@@ -33,7 +34,7 @@ const SwiperDetailParts = () => {
             >
                 <SwiperSlide className='swiperCardDetail'>
                     <a className='gallery_item' href={parts}>
-                        <img src={parts} alt={'parts'} />
+                        <img src={parts2} alt={'parts'} />
                     </a>
                 </SwiperSlide>
                 <SwiperSlide className='swiperCardDetail'>
@@ -46,11 +47,13 @@ const SwiperDetailParts = () => {
                         <img src={parts} alt={'parts'} />
                     </a>
                 </SwiperSlide>
+
+
             </Swiper>
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
-                slidesPerView={6}
+                slidesPerView={3}
                 spaceBetween={10}
                 freeMode={true}
                 watchSlidesProgress={true}
@@ -58,14 +61,16 @@ const SwiperDetailParts = () => {
                 className="SwiperDetailParts_mini"
             >
                 <SwiperSlide className='SwiperCardDetail_mini' >
-                    <img src={parts} alt={'parts'} />
+                    <img src={parts2} alt={'parts'} />
                 </SwiperSlide>
+
                 <SwiperSlide className='SwiperCardDetail_mini'>
                     <img src={parts} alt={'parts'} />
                 </SwiperSlide>
                 <SwiperSlide className='SwiperCardDetail_mini'>
                     <img src={parts} alt={'parts'} />
                 </SwiperSlide>
+
             </Swiper>
         </LightGallery>
     );

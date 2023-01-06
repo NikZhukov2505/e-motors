@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                     <div className={styles.box_contact_info}>
                         <p>Наша почта:</p>
-                        <p>Почта: betterlife.kg@gmail.com</p>
+                        <a href='mailto:betterlife.kg@gmail.com'>Почта: betterlife.kg@gmail.com</a>
                     </div>
                     <div className={`${styles.box_contact_info} ${styles.box_contact_icons}`}>
                         <a href="https://telegram.org/" target="_blank"><img src={telegram} alt="telegram" /></a>
