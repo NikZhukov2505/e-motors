@@ -3,12 +3,13 @@ import { allAPIs } from './../API/index';
 
 export const getAllCategories = createAsyncThunk(
     'motors/getAllCategories',
-    async (_, { rejectWithValue }) => {
+    async (_, { rejectWithValue, dispatch }) => {
         try {
             const res = await allAPIs.getCategories()
             if (res.status !== 200) {
                 throw new Error('Server Error, can\'t resolve categories')
             }
+            dispatch(setCategoryName(res.data[0].name))
             return res.data
         } catch (error) {
             return rejectWithValue(error.message)
@@ -53,9 +54,9 @@ const motorsSlice = createSlice({
     initialState: {
         isLoading: false,
         error: null,
-        categoryName: 'Электромобили',
+        categoryName: null,
         liName: 'all',
-        partsName: 'stations',
+        partsName: null,
         partsLiName: 'all',
         categories: [],
         categoryId: undefined,
@@ -97,7 +98,7 @@ const motorsSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         },
-        [getProductsAuto.pending]: (state, action) => {
+        [getProductsAuto.pending]: (state) => {
             state.isLoading = true
             state.error = null
         },
@@ -109,7 +110,7 @@ const motorsSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         },
-        [getDetailProductAuto.pending]: (state, action) => {
+        [getDetailProductAuto.pending]: (state) => {
             state.isLoading = true
             state.error = null
         },

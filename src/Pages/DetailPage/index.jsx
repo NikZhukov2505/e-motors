@@ -1,19 +1,20 @@
 import React from 'react';
 import { useEffect } from 'react';
-import styles from './DetailPage.module.css'
 import SwiperDetail from './SwiperDetail/index';
 import Description from './Description/index';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDetailProductAuto } from './../../redux/motorsSlice';
 import Feature from '../../Components/Feature';
+import styles from './DetailPage.module.css'
+import Loader from './../../Components/Loader/index';
 
 
 const DetailPage = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    const { detailAuto } = useSelector(state => state.motors)
-    // console.log(detailAuto);
+    const { detailAuto, isLoading } = useSelector(state => state.motors)
+    const info = useSelector(state => state.info.info)
 
     useEffect(() => {
         dispatch(getDetailProductAuto(id))
@@ -21,6 +22,7 @@ const DetailPage = () => {
     }, [])
     return (
         <div className={styles.container}>
+            {isLoading && <Loader />}
             <div className={styles.box_character}>
                 <div className={styles.box_character_img}>
                     <SwiperDetail imageList={detailAuto.images} image={detailAuto.image} />
@@ -48,7 +50,9 @@ const DetailPage = () => {
                         <h2 className={styles.price}>{detailAuto.price}</h2>
                     </div>
                     <div className={styles.title_character}>
-                        <button>заказать</button>
+                        <a href={info.whatsapp}>
+                            <button>заказать</button>
+                        </a>
                     </div>
                 </div>
             </div>

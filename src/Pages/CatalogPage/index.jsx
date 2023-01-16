@@ -7,9 +7,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import Card from './Card';
 import ListFilter from './ListFilter';
 import { getProductsAuto, setCategoryId, setCategoryName, setLiName, setStock } from '../../redux/motorsSlice';
+import Loader from '../../Components/Loader';
 
 const CatalogPage = () => {
-    const { categoryName, liName, categories, categoryId, productAuto, stock } = useSelector(state => state?.motors)
+    const { categoryName, liName, categories, categoryId, productAuto, stock, isLoading } = useSelector(state => state?.motors)
     const dispatch = useDispatch()
     // console.log(productAuto);
 
@@ -51,16 +52,22 @@ const CatalogPage = () => {
                         }
                     </div>
                 </div>
+
                 <div className={styles.cards}>
                     {
-                        productAuto.length > 0 ?
-                            productAuto?.map(e => (
-                                <Card key={e.id} item={e} />
-
-                            ))
-
+                        isLoading ?
+                            <div className={styles.loader}>
+                                <Loader />
+                            </div>
                             :
-                            <h1>Товаров нет!</h1>
+                            productAuto.length > 0 ?
+                                productAuto?.map(e => (
+                                    <Card key={e.id} item={e} />
+
+                                ))
+
+                                :
+                                <h1 className={styles.empty}>Товаров нет!</h1>
                     }
 
                 </div>

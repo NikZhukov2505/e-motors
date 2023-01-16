@@ -81,6 +81,14 @@
     color: #FFCD00;
 }
 
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 75%;
+    height: 50vh;
+}
+
 .cards {
     flex: 0 1 75%;
     display: flex;
@@ -195,4 +203,13 @@
     box-shadow: rgb(0, 0, 0) 0px 0px 5px 5px;
     border-radius: 50%;
     background: black;
+}
+
+.empty {
+    width: 100%;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Gotham', sans-serif;
+    text-align: center;
 }
