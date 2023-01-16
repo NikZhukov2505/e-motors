@@ -19,13 +19,15 @@ const SwiperDetail = ({ image, imageList }) => {
             plugins={[lgThumbnail, lgZoom]}
         >
             <Swiper
-                modules={[FreeMode, Navigation, Thumbs, Keyboard]}
+                modules={[Navigation, Thumbs, Keyboard]}
                 style={{
                     "--swiper-navigation-color": "#FFCD00",
                     "--swiper-pagination-color": "#FFCD00",
 
                 }}
                 loop={true}
+                spaceBetween={30}
+
                 navigation={true}
                 keyboard
                 thumbs={{ swiper: thumbsSwiper }}
