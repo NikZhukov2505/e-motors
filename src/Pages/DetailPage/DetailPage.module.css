@@ -1,5 +1,5 @@
 .container {
-    width: 90%;
+    width: 85%;
     margin: 110px auto 0;
 }
 
@@ -55,4 +55,44 @@
 .title_character button:active {
     background: #000;
     color: #FFCD00;
+}
+
+.feature {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Gotham', sans-serif;
+    line-height: 24px;
+    color: #FFCD00;
+}
+
+.price_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gotham', sans-serif;
+}
+
+.price_text {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.price {
+    color: #FFCD00;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38.4px;
+}
+
+.block_feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Gotham', sans-serif;
+    color: #FFFFFFCC;
 }

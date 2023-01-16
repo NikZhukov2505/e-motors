@@ -9,9 +9,11 @@ import 'swiper/css/bundle';
 
 import honda from './../../assets/hondaBg.jpg'
 import tesla from './../../assets/teslaBg.jpg'
+import { useSelector } from 'react-redux';
 
 
 const SwiperTop = () => {
+    const info = useSelector(state => state.info.info)
     return (
         <Swiper
             modules={[Pagination, A11y, Autoplay, Keyboard, EffectFade]}
@@ -30,7 +32,16 @@ const SwiperTop = () => {
 
 
         >
-            <SwiperSlide>
+            {
+                info?.images?.map((e, i) => (
+                    <SwiperSlide key={i}>
+                        <div className='slideCard'>
+                            <img src={`http://176.126.166.199:8000${e.image}`} alt="honda" />
+                        </div>
+                    </SwiperSlide>
+                ))
+            }
+            {/* <SwiperSlide>
                 <div className='slideCard'>
                     <img src={honda} alt="honda" />
                 </div>
@@ -39,7 +50,7 @@ const SwiperTop = () => {
                 <div className='slideCard'>
                     <img src={tesla} alt="honda" />
                 </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
         </Swiper>
 
     );
