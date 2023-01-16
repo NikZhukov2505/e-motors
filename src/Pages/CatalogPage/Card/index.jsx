@@ -5,7 +5,6 @@ import 'animate.css';
 import stock from '../../../assets/inStock.png'
 
 const Card = ({ item }) => {
-    console.log(item);
     return (
         <div className={`${styles.card} animate__animated animate__fadeInRight`}>
             <WavyLink duration={700} color={'#000'} to={`/detail-motors/${item?.id}`}>

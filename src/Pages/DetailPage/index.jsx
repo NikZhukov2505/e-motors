@@ -13,7 +13,7 @@ const DetailPage = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
     const { detailAuto } = useSelector(state => state.motors)
-    // console.log(detailAuto);
+
 
     useEffect(() => {
         dispatch(getDetailProductAuto(id))

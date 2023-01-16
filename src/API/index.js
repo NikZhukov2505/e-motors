@@ -19,5 +19,14 @@ export const allAPIs = {
     },
     detailProductAuto(id) {
         return instanse.get(`categories/product_auto/${id}/`)
+    },
+    getCategoriesParts() {
+        return instanse.get(`categories/category/`)
+    },
+    getProductsParts(stock, id) {
+        return instanse.get(`categories/products/?in_stock=${stock}&category=${id}`)
+    },
+    detailProductsParts(id) {
+        return instanse.get(`categories/products/${id}`)
     }
 }

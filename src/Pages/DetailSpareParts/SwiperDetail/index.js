@@ -12,8 +12,9 @@ import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 
-const SwiperDetailParts = () => {
+const SwiperDetailParts = ({ images, image }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    console.log(images);
     return (
         <LightGallery
             selector={'.gallery_item'}
@@ -33,20 +34,21 @@ const SwiperDetailParts = () => {
                 className='SwiperDetailParts'
             >
                 <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={parts}>
-                        <img src={parts2} alt={'parts'} />
+                    <a className='gallery_item' href={image}>
+                        <img src={image} alt={'parts'} />
                     </a>
                 </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={parts}>
-                        <img src={parts} alt={'parts'} />
-                    </a>
-                </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={parts}>
-                        <img src={parts} alt={'parts'} />
-                    </a>
-                </SwiperSlide>
+                {
+                    images?.length > 0 &&
+                    images?.map((e, i) => (
+                        <SwiperSlide key={i} className='swiperCardDetail'>
+                            <a className='gallery_item' href={e?.image}>
+                                <img src={e.image} alt={'parts'} />
+                            </a>
+                        </SwiperSlide>
+                    ))}
+
+
 
 
             </Swiper>
@@ -61,15 +63,18 @@ const SwiperDetailParts = () => {
                 className="SwiperDetailParts_mini"
             >
                 <SwiperSlide className='SwiperCardDetail_mini' >
-                    <img src={parts2} alt={'parts'} />
+                    <img src={image} alt={'parts'} />
                 </SwiperSlide>
+                {
+                    images?.length > 0 &&
+                    images?.map((e, i) => (
+                        <SwiperSlide key={i} className='SwiperCardDetail_mini' >
+                            <img src={e?.image} alt={'parts'} />
+                        </SwiperSlide>
 
-                <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={parts} alt={'parts'} />
-                </SwiperSlide>
-                <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={parts} alt={'parts'} />
-                </SwiperSlide>
+                    ))}
+
+
 
             </Swiper>
         </LightGallery>
