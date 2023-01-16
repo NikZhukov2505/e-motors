@@ -7,10 +7,11 @@ import PartsCard from './PartsCard';
 import ListFilter from './../CatalogPage/ListFilter/index';
 import { setPartsCategoriesId, setPartsLiName, setPartsName, setPartsStock } from '../../redux/motorsSlice';
 import { getProductsParts } from './../../redux/motorsSlice';
+import Loader from '../../Components/Loader';
 
 
 const PartsPage = () => {
-    const { partsName, partsLiName, partsCategories, productParts, partsStock, partsCategoriesId } = useSelector(state => state?.motors)
+    const { partsName, partsLiName, partsCategories, productParts, partsStock, partsCategoriesId, isLoading } = useSelector(state => state?.motors)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -54,13 +55,18 @@ const PartsPage = () => {
                 </div>
                 <div className={styles.cards}>
                     {
-                        productParts.length > 0 ?
-                            productParts?.map(e => (
-                                <PartsCard key={e.id} item={e} />
-                            ))
-
+                        isLoading ?
+                            <div className={styles.loader}>
+                                <Loader />
+                            </div>
                             :
-                            <h1>Товаров нет!</h1>
+                            productParts.length > 0 ?
+                                productParts?.map(e => (
+                                    <PartsCard key={e.id} item={e} />
+                                ))
+
+                                :
+                                <h1 className={styles.empty}>Товаров нет!</h1>
                     }
                 </div>
             </div>
