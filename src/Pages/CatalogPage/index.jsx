@@ -56,7 +56,6 @@ const CatalogPage = () => {
                         productAuto.length > 0 ?
                             productAuto?.map(e => (
                                 <Card key={e.id} item={e} />
-
                             ))
 
                             :

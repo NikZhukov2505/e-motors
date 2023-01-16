@@ -5,26 +5,23 @@ import dropDown from '../../assets/dropDown.png'
 import 'animate.css'
 import PartsCard from './PartsCard';
 import ListFilter from './../CatalogPage/ListFilter/index';
-import { setPartsLiName, setPartsName } from '../../redux/motorsSlice';
+import { setPartsCategoriesId, setPartsLiName, setPartsName, setPartsStock } from '../../redux/motorsSlice';
+import { getProductsParts } from './../../redux/motorsSlice';
 
 
 const PartsPage = () => {
-    const [stations, setStations] = useState(false)
-    const [parts, setParts] = useState(false)
-    const { partsName, partsLiName } = useSelector(state => state.motors)
+    const { partsName, partsLiName, partsCategories, productParts, partsStock, partsCategoriesId } = useSelector(state => state?.motors)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (partsName == 'parts') {
-            setParts(true)
-        } else {
-            setStations(true)
-        }
-    }, [partsName])
+        dispatch(getProductsParts({ partsStock, partsCategoriesId }))
+    }, [partsCategoriesId, partsStock])
 
-    const showActivePartsLi = (category, name) => {
-        dispatch(setPartsName(category))
+    const showActivePartsLi = (category, name, inStock) => {
         dispatch(setPartsLiName(name))
+        dispatch(setPartsName(category.name))
+        dispatch(setPartsCategoriesId({ id: category.id }))
+        dispatch(setPartsStock({ inStock }))
     }
 
     return (
@@ -33,34 +30,38 @@ const PartsPage = () => {
                 <div className={styles.categories_block}>
                     <input type="text" placeholder='Поиск' className={styles.search} />
                     <div>
-                        <div onClick={() => setStations(!stations)} className={styles.dropDown}>
-                            <h4>Электростанции</h4>
-                            <img className={stations ? styles.arrow : null} src={dropDown} alt="drop-down" />
-                        </div>
                         {
-                            stations ?
-                                <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={'stations'} />
-                                :
-                                null
+                            partsCategories &&
+                            partsCategories.map(c => (
+                                <div key={c.id}>
+                                    <div onClick={() => showActivePartsLi(c, 'all', '')} className={styles.dropDown}>
+                                        <h4>{c.name}</h4>
+                                        <img className={partsName == c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
+                                    </div>
+                                    {
+                                        partsName === c.name ?
+                                            <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={c} />
+                                            :
+                                            null
+                                    }
+                                </div>
+                            ))
                         }
+
+
                     </div>
-                    <div>
-                        <div onClick={() => setParts(!parts)} className={styles.dropDown}>
-                            <h4>Запчасти</h4>
-                            <img className={parts ? styles.arrow : null} src={dropDown} alt="drop-down" />
-                        </div>
-                        {
-                            parts ?
-                                <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={'parts'} />
-                                :
-                                null
-                        }
-                    </div>
+
                 </div>
                 <div className={styles.cards}>
-                    <PartsCard />
-                    <PartsCard />
-                    <PartsCard />
+                    {
+                        productParts.length > 0 ?
+                            productParts?.map(e => (
+                                <PartsCard key={e.id} item={e} />
+                            ))
+
+                            :
+                            <h1>Товаров нет!</h1>
+                    }
                 </div>
             </div>
         </div>
