@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Parts.module.css'
 import { useSelector, useDispatch } from 'react-redux';
-import { setPartsLiName, setPartsName } from './../../redux/reducers/motorsReducer';
 import dropDown from '../../assets/dropDown.png'
 import 'animate.css'
 import PartsCard from './PartsCard';
 import ListFilter from './../CatalogPage/ListFilter/index';
+import { setPartsLiName, setPartsName } from '../../redux/motorsSlice';
 
 
 const PartsPage = () => {

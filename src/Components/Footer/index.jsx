@@ -5,9 +5,10 @@ import telegram from './../../assets/telegram.png'
 import whatsapp from './../../assets/whatsapp.png'
 import instagram from './../../assets/instagram.png'
 import { Link } from 'react-scroll';
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
-
+    const info = useSelector(state => state.info.info)
     return (
         <footer id='contacts' className={styles.footer}>
             <div className={styles.container}>
@@ -18,26 +19,25 @@ const Footer = () => {
                         duration={1500}
                         to={'top'}
                     >
-                        <img className={styles.btn_scroll_up} src={logo} alt="logo" />
+                        <img className={styles.btn_scroll_up} src={`http://176.126.166.199:8000${info.logo}`} alt="logo" />
                     </Link>
                 </div>
                 <div className={styles.box_contact}>
                     <div className={styles.box_contact_info}>
-                        <p ><a id={styles.contact_number} href="tel:+996 (552) 343 656">+996 (552) 343 656</a></p>
+                        <p ><a id={styles.contact_number} href={info.phone_number}>{info.phone_number}</a></p>
                     </div>
                     <div className={styles.box_contact_info}>
-                        <p>Наш адресс:</p>
-                        <p>Кыргызстан, г. Бишкек
-                            ул. Усенбаева №52</p>
+                        <p>Наш адрес:</p>
+                        <p>{info.address}</p>
                     </div>
                     <div className={styles.box_contact_info}>
                         <p>Наша почта:</p>
-                        <a href='mailto:betterlife.kg@gmail.com'>Почта: betterlife.kg@gmail.com</a>
+                        <a href={`mailto:${info.email}`}>Почта: {info.email}</a>
                     </div>
                     <div className={`${styles.box_contact_info} ${styles.box_contact_icons}`}>
-                        <a href="https://telegram.org/" target="_blank"><img src={telegram} alt="telegram" /></a>
-                        <a href="https://www.whatsapp.com/?lang=ru" target="_blank"><img src={whatsapp} alt="whatsapp" /></a>
-                        <a href="https://www.instagram.com/" target="_blank"><img src={instagram} alt="instagram" /></a>
+                        <a href={info.telegram} target="_blank"><img src={telegram} alt="telegram" /></a>
+                        <a href={info.whatsapp} target="_blank"><img src={whatsapp} alt="whatsapp" /></a>
+                        <a href={info.instagram} target="_blank"><img src={instagram} alt="instagram" /></a>
                     </div>
 
                 </div>

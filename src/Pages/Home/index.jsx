@@ -7,11 +7,11 @@ import styles from './Home.module.css'
 
 const Home = () => {
     return (
-        <>
+        <main>
             <SwiperTop />
             <Catalog />
             <SwiperAbout />
-        </>
+        </main>
     );
 };
 
