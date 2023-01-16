@@ -178,3 +178,20 @@
     background-color: #000;
     color: #FFCD00;
 }
+
+.empty {
+    width: 100%;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Gotham', sans-serif;
+    text-align: center;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 75%;
+    height: 50vh;
+}
