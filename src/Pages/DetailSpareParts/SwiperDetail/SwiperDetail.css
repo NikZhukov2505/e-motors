@@ -1,5 +1,5 @@
 .SwiperDetailParts {
-    width: 1050px;
+    width: 1000px;
     height: 60vh;
     border-radius: 10px;
 }
@@ -15,7 +15,7 @@
 .SwiperDetailParts_mini {
     display: flex;
     justify-content: flex-start;
-    max-width: 1050px;
+    max-width: 1000px;
     margin-left: 0px;
 }
 

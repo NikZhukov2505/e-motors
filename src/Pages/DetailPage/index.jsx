@@ -16,6 +16,7 @@ const DetailPage = () => {
     const { detailAuto, isLoading } = useSelector(state => state.motors)
     const info = useSelector(state => state.info.info)
 
+
     useEffect(() => {
         dispatch(getDetailProductAuto(id))
         window.scrollTo(0, 0)

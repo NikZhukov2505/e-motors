@@ -84,9 +84,10 @@
 .cards {
     flex: 0 1 75%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 5%;
+
 }
 
 .card {

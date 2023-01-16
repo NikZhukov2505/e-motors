@@ -12,7 +12,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import DetailPageParts from './Pages/DetailSpareParts';
 import { useDispatch } from 'react-redux';
 import { getAllInfo } from './redux/infoSlice';
-import { getAllCategories } from './redux/motorsSlice';
+import { getAllCategories, getAllCategoriesParts } from './redux/motorsSlice';
 
 const App = () => {
   const dispatch = useDispatch()
@@ -20,6 +20,7 @@ const App = () => {
   useEffect(() => {
     dispatch(getAllInfo())
     dispatch(getAllCategories())
+    dispatch(getAllCategoriesParts())
   }, [dispatch])
 
   return (

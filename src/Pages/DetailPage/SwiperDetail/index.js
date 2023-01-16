@@ -35,13 +35,13 @@ const SwiperDetail = ({ image, imageList }) => {
             >
                 <SwiperSlide className='swiperCardDetail'>
                     <a data-src={image} className='gallery_item' href={image}>
-                        <img src={image} alt={"slidemotors"} />
+                        <img className='swiperDetailImg' src={image} alt={"slidemotors"} />
                     </a>
                 </SwiperSlide>
                 {
                     imageList?.length > 0 &&
                     imageList?.map((img, i) => (
-                        <SwiperSlide key={i} className='SwiperCardDetail_mini'>
+                        <SwiperSlide key={i} className='swiperCardDetail'>
                             <a data-src={img?.image} className='gallery_item' href={img?.image}>
                                 <img src={img?.image} alt={"slidemotors"} />
                             </a>

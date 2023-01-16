@@ -55,10 +55,12 @@ const CatalogPage = () => {
 
                 <div className={styles.cards}>
                     {
+
                         isLoading ?
                             <div className={styles.loader}>
                                 <Loader />
                             </div>
+
                             :
                             productAuto.length > 0 ?
                                 productAuto?.map(e => (
