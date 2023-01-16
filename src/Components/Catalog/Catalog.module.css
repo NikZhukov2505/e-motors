@@ -22,14 +22,16 @@
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
+
 }
 
 .card_categories {
     display: block;
-    flex: 0 1 17%;
+    width: 17%;
     transition: 1s;
     cursor: pointer;
     word-wrap: break-word;
+
 }
 
 
@@ -43,7 +45,16 @@
     color: #FFFFFF;
 }
 
-.card_categories img {
+.item_card {
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+    border-radius: 50%;
+    margin-bottom: 20px;
+
+}
+
+.item_card img {
     width: 100%;
     transition: 0.5s;
 
@@ -54,13 +65,6 @@
     transform: scale(1.03) rotate(-2deg);
 }
 
-.item_card {
-    position: relative;
-    width: 100%;
-    transition: 0.5s;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
 
 .item_card:hover::before {
     border-radius: 50%;
@@ -123,6 +127,6 @@
 
     .card_categories {
 
-        flex: 0 1 35%;
+        width: 40%;
     }
 }

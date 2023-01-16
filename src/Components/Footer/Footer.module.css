@@ -31,7 +31,6 @@
 
 .box_contact_info a,
 .box_contact_info p {
-    text-align: end;
     font-family: 'Gotham', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -72,4 +71,31 @@
     -webkit-filter: sepia(1) hue-rotate(300deg) saturate(30);
     filter: sepia(1) hue-rotate(300deg) saturate(30);
     transform: scale(1.1);
+}
+
+@media (max-width:767px) {
+    .footer {
+        padding: 0;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .box_logo {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .box_contact_info p {
+        text-align: center;
+    }
+
+    .box_contact {
+        align-items: center;
+    }
+
+    .box_contact_icons {
+        margin-bottom: 10%;
+    }
 }
