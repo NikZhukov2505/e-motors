@@ -1,10 +1,13 @@
-import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
-import thunk from "redux-thunk";
-import motorsReducer from './reducers/motorsReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import infoSlice from './infoSlice';
+import motorsSlice from './motorsSlice';
 
 
-const rootReducers = combineReducers({
-    motors: motorsReducer,
+const store = configureStore({
+    reducer: {
+        motors: motorsSlice,
+        info: infoSlice,
+    }
 })
 
-export const store = legacy_createStore(rootReducers, applyMiddleware(thunk))
+export default store;

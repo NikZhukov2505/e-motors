@@ -6,15 +6,17 @@ import { WavyLink } from 'react-wavy-transitions';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { HashLink } from 'react-router-hash-link';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+    const info = useSelector(state => state.info.info)
     const location = useLocation()
     const params = useParams()
     // console.log(params);
     return (
         <header id='top' className={styles.header}>
             <div className={styles.logo_block}>
-                <WavyLink duration={700} color='#000' to={'/'}><img src={logo} alt="e_motors_logo" /></WavyLink>
+                <WavyLink duration={700} color='#000' to={'/'}><img src={`http://176.126.166.199:8000${info.logo}`} alt="e_motors_logo" /></WavyLink>
             </div>
             <nav className={styles.nav}>
                 <ul className={styles.menu}>
@@ -49,7 +51,7 @@ const Header = () => {
                 </ul>
             </nav>
             <div className={styles.connect_block}>
-                <a href="https://wa.me/message/MAZFGZ7VXQLPB1">
+                <a href={info.whatsapp}>
                     <button className={styles.connect_btn}>Связаться с нами</button>
                 </a>
             </div>

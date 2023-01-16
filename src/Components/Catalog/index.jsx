@@ -1,21 +1,21 @@
 import React from 'react';
 import styles from './Catalog.module.css'
 import moreCatalog from './../../assets/moreCatalog.png'
-import carCatalog from './../../assets/carCatalog.png'
-import motoCatalog from './../../assets/motoCatalog.png'
-import samoCatalog from './../../assets/samoCatalog.png'
-import sircleCatalog from './../../assets/sircleCatalog.png'
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setCategoryName } from './../../redux/reducers/motorsReducer';
+import { setCategoryId, setCategoryName, setStock } from '../../redux/motorsSlice';
+
 
 const Catalog = () => {
     const [showCategories, setShowCategories] = useState(false)
     const dispatch = useDispatch()
+    const { categories } = useSelector(state => state?.motors)
 
-    const setCategory = (name) => {
-        dispatch(setCategoryName(name))
+    const setCategory = (c) => {
+        dispatch(setCategoryName(c.name))
+        dispatch(setCategoryId({ id: c.id }))
+        dispatch(setStock({ inStock: '' }))
         window.scrollTo(0, 0)
     }
 
@@ -33,41 +33,16 @@ const Catalog = () => {
                 {
                     showCategories &&
                     <>
-                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`} onClick={() => setCategory('electro')} to={'/catalog'}>
-                            <div className={styles.item_card}>
-                                <img src={carCatalog} alt="carCatalog" />
-                            </div>
-                            <p>Электромобили</p>
-                        </Link>
-                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`} onClick={() => setCategory('scuter')} to={'/catalog'}>
-                            <div className={styles.item_card}>
-                                <img src={motoCatalog} alt="motoCatalog" />
-                            </div>
-                            <p>Электробайки</p>
-                        </Link>
-                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`} onClick={() => setCategory('transport')} to={'/catalog'}>
-                            <div className={styles.item_card}>
-                                <img src={samoCatalog} alt="samoCatalog" />
-                            </div>
-                            <p>Электротранспорт</p>
-                        </Link>
-                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`}>
-                            <div className={styles.item_card}>
-                                <img src={sircleCatalog} alt="sircleCatalog" />
-                            </div>
-                        </Link>
-                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`}>
-                            <div className={styles.item_card}>
-                                <img src={sircleCatalog} alt="sircleCatalog" />
-                            </div>
-                            <p></p>
-                        </Link>
-                        <Link className={`${styles.card_categories} animate__flipInY animate__animated`}>
-                            <div className={styles.item_card}>
-                                <img src={sircleCatalog} alt="sircleCatalog" />
-                            </div>
-                            <p></p>
-                        </Link>
+                        {
+                            categories?.map(c => (
+                                <Link key={c.id} className={`${styles.card_categories} animate__flipInY animate__animated`} onClick={() => setCategory(c)} to={'/catalog'}>
+                                    <div className={styles.item_card}>
+                                        <img src={c.image} alt="carCatalog" />
+                                    </div>
+                                    <p>{c.name}</p>
+                                </Link>
+                            ))
+                        }
                     </>
 
                 }

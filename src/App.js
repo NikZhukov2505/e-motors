@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css'
 import { Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/index';
@@ -10,8 +10,18 @@ import { WavyContainer } from 'react-wavy-transitions';
 import PartsPage from './Pages/PartsPage';
 import NotFound from './Pages/NotFound/NotFound';
 import DetailPageParts from './Pages/DetailSpareParts';
+import { useDispatch } from 'react-redux';
+import { getAllInfo } from './redux/infoSlice';
+import { getAllCategories } from './redux/motorsSlice';
 
 const App = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getAllInfo())
+    dispatch(getAllCategories())
+  }, [dispatch])
+
   return (
     <>
       <Header />

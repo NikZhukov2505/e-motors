@@ -3,9 +3,6 @@ import './SwiperDetail.css'
 import { FreeMode, Navigation, Thumbs, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
-import slideImg1 from './../../../assets/swiper3.jpg'
-import slideImg2 from './../../../assets/teslaBg.jpg'
-import slideImg3 from './../../../assets/teslaSwiperAbout.jpg'
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
@@ -13,11 +10,11 @@ import 'lightgallery/css/lg-thumbnail.css';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 
-const SwiperDetail = () => {
+const SwiperDetail = ({ image, imageList }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <LightGallery
-            selector={'.gallery_item'}
+            selector='.gallery_item'
             speed={500}
             plugins={[lgThumbnail, lgZoom]}
         >
@@ -35,30 +32,20 @@ const SwiperDetail = () => {
                 className='SwiperDetail'
             >
                 <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg1}>
-                        <img src={slideImg1} alt={"slidemotors"} />
+                    <a data-src={image} className='gallery_item' href={image}>
+                        <img src={image} alt={"slidemotors"} />
                     </a>
                 </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg2}>
-                        <img src={slideImg2} alt={"slidemotors"} />
-                    </a>
-                </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg3}>
-                        <img src={slideImg3} alt={"slidemotors"} />
-                    </a>
-                </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg1}>
-                        <img src={slideImg1} alt={"slidemotors"} />
-                    </a>
-                </SwiperSlide>
-                <SwiperSlide className='swiperCardDetail'>
-                    <a className='gallery_item' href={slideImg2}>
-                        <img src={slideImg2} alt={"slidemotors"} />
-                    </a>
-                </SwiperSlide>
+                {
+                    imageList?.length > 0 &&
+                    imageList?.map((img, i) => (
+                        <SwiperSlide key={i} className='SwiperCardDetail_mini'>
+                            <a data-src={img?.image} className='gallery_item' href={img?.image}>
+                                <img src={img?.image} alt={"slidemotors"} />
+                            </a>
+                        </SwiperSlide>
+                    ))
+                }
 
             </Swiper>
             <Swiper
@@ -73,20 +60,18 @@ const SwiperDetail = () => {
 
             >
                 <SwiperSlide className='SwiperCardDetail_mini' >
-                    <img src={slideImg1} alt={"slidemotors"} />
+                    <img src={image} alt={"slidemotors"} />
                 </SwiperSlide>
-                <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={slideImg2} alt={"slidemotors"} />
-                </SwiperSlide>
-                <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={slideImg3} alt={"slidemotors"} />
-                </SwiperSlide>
-                <SwiperSlide className='SwiperCardDetail_mini'>
-                    <img src={slideImg1} alt={"slidemotors"} />
-                </SwiperSlide>
-                <SwiperSlide className='SwiperCardDetail_mini' >
-                    <img src={slideImg2} alt={"slidemotors"} />
-                </SwiperSlide>
+                {
+                    imageList?.length > 0 &&
+                    imageList?.map((img, i) => (
+                        <SwiperSlide key={i} className='SwiperCardDetail_mini'>
+                            <img src={img?.image} alt={"slidemotors"} />
+                        </SwiperSlide>
+                    ))
+                }
+
+
 
             </Swiper>
         </LightGallery>

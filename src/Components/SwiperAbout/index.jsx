@@ -3,12 +3,13 @@ import './SwiperAbout.css'
 import 'swiper/css/bundle';
 import { Pagination, A11y, Keyboard, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import slideAboutImg from './../../assets/SwiperAbout.jpg'
 import honda from './../../assets/hondaBg.jpg'
 import teslaSwiperAbout from './../../assets/teslaSwiperAbout.jpg'
+import { useSelector } from 'react-redux';
 
 const SwiperAbout = () => {
+    const info = useSelector(state => state.info.info)
     return (
         <Swiper id='about-us' className='SwiperAbout'
             modules={[Pagination, A11y, Autoplay, Keyboard, EffectFade]}
@@ -33,7 +34,7 @@ const SwiperAbout = () => {
                     <div className="about_box-title">
                         <div className="about_center-box-title">
                             <h2>о нас</h2>
-                            <p>Наша компания занимается доставкой и продажей электромобилей из Китая под заказ. Мы работаем только с проверенными автопроизводителями, сотрудники нашего офиса в Китае, проверяют каждый автомобиль перед покупкой. Электромобили, которые везем под заказ находятся на нашей площадке в Китае, а те электромобили, которые уже есть на площадке в Бишкеке, доступны к продаже уже сейчас.</p>
+                            <p>{info.text}</p>
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,7 @@ const SwiperAbout = () => {
                     <div className="about_box-title">
                         <div className="about_center-box-title">
                             <h2>о нас</h2>
-                            <p>Наша компания занимается доставкой и продажей электромобилей из Китая под заказ. Мы работаем только с проверенными автопроизводителями, сотрудники нашего офиса в Китае, проверяют каждый автомобиль перед покупкой. Электромобили, которые везем под заказ находятся на нашей площадке в Китае, а те электромобили, которые уже есть на площадке в Бишкеке, доступны к продаже уже сейчас.</p>
+                            <p>{info.text}</p>
                         </div>
                     </div>
                 </div>
@@ -67,5 +68,6 @@ const SwiperAbout = () => {
         </Swiper>
     );
 };
+
 
 export default SwiperAbout;

@@ -84,9 +84,9 @@
 .cards {
     flex: 0 1 75%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 5%;
 }
 
 .card {
@@ -101,6 +101,10 @@
     margin-bottom: 30px;
     box-shadow: -2px -2px 28px #001529,
         2px 2px 28px #0055a3;
+}
+
+.car_img {
+    height: 200px;
 }
 
 .card button {
@@ -176,4 +180,19 @@
 .price_block button:active {
     background-color: #000;
     color: #FFCD00;
+}
+
+.item_foto_block {
+    position: relative;
+}
+
+#stock {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 5px 5px;
+    border-radius: 50%;
+    background: black;
 }
