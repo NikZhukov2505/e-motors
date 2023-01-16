@@ -27,7 +27,7 @@ const Footer = () => {
                     </div>
                     <div className={styles.box_contact_info}>
                         <p>Наш адресс:</p>
-                        <p>Кыргызстан, г. Бишкек<br />
+                        <p>Кыргызстан, г. Бишкек
                             ул. Усенбаева №52</p>
                     </div>
                     <div className={styles.box_contact_info}>

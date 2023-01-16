@@ -75,3 +75,40 @@
 .SwiperAbout .swiper-pagination-bullet-active {
     background: #FFFFFF;
 }
+
+@media (max-width:767px) {
+    .SwiperAbout {
+        height: 800px;
+    }
+
+    .slideAbout-Card {
+        flex-direction: column;
+    }
+
+    .about_center-box-title {
+        height: 100%;
+    }
+
+    .about_box-title h2 {
+        font-size: 28px;
+        line-height: 20px;
+    }
+
+    .about_box-title p {
+        font-size: 16px;
+        line-height: 25px;
+        margin-bottom: 20%;
+    }
+
+    .about_box-title h2 {
+        margin: 10% 0;
+    }
+
+
+
+    .SwiperAbout .swiper-pagination-bullets.swiper-pagination-horizontal {
+        bottom: 5%;
+        left: 10%;
+        text-align: start;
+    }
+}
