@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Footer.module.css'
-import logo from './../../assets/logo.png'
 import telegram from './../../assets/telegram.png'
 import whatsapp from './../../assets/whatsapp.png'
 import instagram from './../../assets/instagram.png'

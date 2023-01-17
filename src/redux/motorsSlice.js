@@ -97,6 +97,36 @@ export const getDetailProductParts = createAsyncThunk(
     }
 )
 
+export const getAutoByName = createAsyncThunk(
+    'motors/getAutoByName',
+    async (name, { rejectWithValue }) => {
+        try {
+            const res = await allAPIs.getProductAutoByName(name)
+            if (res.status !== 200) {
+                throw new Error('Server Error, this `Name` not found')
+            }
+            return res.data
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+export const getPartsByName = createAsyncThunk(
+    'motors/getPartsByName',
+    async (name, { rejectWithValue }) => {
+        try {
+            const res = await allAPIs.getPartsByName(name)
+            if (res.status !== 200) {
+                throw new Error('Server Error, this `Name` not found')
+            }
+            return res.data
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
 
 
 const motorsSlice = createSlice({
@@ -197,7 +227,7 @@ const motorsSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         },
-        [getProductsParts.pending]: (state, action) => {
+        [getProductsParts.pending]: (state) => {
             state.isLoading = true
             state.error = null
         },
@@ -210,8 +240,7 @@ const motorsSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         },
-
-        [getDetailProductParts.pending]: (state, action) => {
+        [getDetailProductParts.pending]: (state) => {
             state.isLoading = true
             state.error = null
         },
@@ -223,7 +252,30 @@ const motorsSlice = createSlice({
             state.isLoading = false
             state.error = action.payload
         },
-
+        [getAutoByName.pending]: (state) => {
+            state.isLoading = true
+            state.error = null
+        },
+        [getAutoByName.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.productAuto = action.payload
+        },
+        [getAutoByName.rejected]: (state, action) => {
+            state.isLoading = false
+            state.error = action.payload
+        },
+        [getPartsByName.pending]: (state) => {
+            state.isLoading = true
+            state.error = null
+        },
+        [getPartsByName.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.productParts = action.payload
+        },
+        [getPartsByName.rejected]: (state, action) => {
+            state.isLoading = false
+            state.error = action.payload
+        },
     }
 })
 
