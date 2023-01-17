@@ -53,7 +53,7 @@ const SwiperDetail = ({ image, imageList }) => {
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
-                slidesPerView={6}
+                slidesPerView={imageList.length + 1 || 3}
                 spaceBetween={10}
                 freeMode={true}
                 watchSlidesProgress={true}

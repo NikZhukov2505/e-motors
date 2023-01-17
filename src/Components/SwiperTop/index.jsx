@@ -1,14 +1,8 @@
 import React from 'react';
 import './SwiperTop.css'
-
-
 import { Pagination, A11y, Keyboard, EffectFade, Autoplay } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
-
-import honda from './../../assets/hondaBg.jpg'
-import tesla from './../../assets/teslaBg.jpg'
 import { useSelector } from 'react-redux';
 
 
@@ -41,16 +35,6 @@ const SwiperTop = () => {
                     </SwiperSlide>
                 ))
             }
-            {/* <SwiperSlide>
-                <div className='slideCard'>
-                    <img src={honda} alt="honda" />
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div className='slideCard'>
-                    <img src={tesla} alt="honda" />
-                </div>
-            </SwiperSlide> */}
         </Swiper>
 
     );

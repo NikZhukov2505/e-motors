@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './Parts.module.css'
 import { useSelector, useDispatch } from 'react-redux';
 import dropDown from '../../assets/dropDown.png'
 import 'animate.css'
 import PartsCard from './PartsCard';
 import ListFilter from './../CatalogPage/ListFilter/index';
-import { setPartsCategoriesId, setPartsLiName, setPartsName, setPartsStock } from '../../redux/motorsSlice';
+import { getPartsByName, setPartsCategoriesId, setPartsLiName, setPartsName, setPartsStock } from '../../redux/motorsSlice';
 import { getProductsParts } from './../../redux/motorsSlice';
 import Loader from '../../Components/Loader';
 
@@ -16,7 +16,7 @@ const PartsPage = () => {
 
     useEffect(() => {
         dispatch(getProductsParts({ partsStock, partsCategoriesId }))
-    }, [partsCategoriesId, partsStock])
+    }, [partsCategoriesId, partsStock, dispatch])
 
     const showActivePartsLi = (category, name, inStock) => {
         dispatch(setPartsLiName(name))
@@ -25,11 +25,20 @@ const PartsPage = () => {
         dispatch(setPartsStock({ inStock }))
     }
 
+    const search = (e) => {
+        const name = e.target.value
+        if (name.length > 2) {
+            dispatch(getPartsByName(name))
+        } else if (name.length == 0) {
+            dispatch(getProductsParts({ partsStock, partsCategoriesId }))
+        }
+    }
+
     return (
         <div className={styles.parts_wrapper}>
             <div className={styles.container}>
                 <div className={styles.categories_block}>
-                    <input type="text" placeholder='Поиск' className={styles.search} />
+                    <input onChange={search} type="text" placeholder='Поиск' className={styles.search} />
                     <div>
                         {
                             partsCategories &&
@@ -37,7 +46,7 @@ const PartsPage = () => {
                                 <div key={c.id}>
                                     <div onClick={() => showActivePartsLi(c, 'all', '')} className={styles.dropDown}>
                                         <h4>{c.name}</h4>
-                                        <img className={partsName == c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
+                                        <img className={partsName === c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
                                     </div>
                                     {
                                         partsName === c.name ?

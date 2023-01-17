@@ -159,7 +159,13 @@
     color: #FFCD00;
 }
 
-.price_block button {
+.price_block a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Gotham', sans-serif;
     color: #FFCD00;
     width: 148px;
     height: 39px;
@@ -169,12 +175,12 @@
     transition: 0.5s;
 }
 
-.price_block button:hover {
+.price_block a:hover {
     background-color: #FFCD00;
     color: #000;
 }
 
-.price_block button:active {
+.price_block a:active {
     background-color: #000;
     color: #FFCD00;
 }

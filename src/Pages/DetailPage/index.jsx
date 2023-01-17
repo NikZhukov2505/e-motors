@@ -20,13 +20,13 @@ const DetailPage = () => {
     useEffect(() => {
         dispatch(getDetailProductAuto(id))
         window.scrollTo(0, 0)
-    }, [])
+    }, [dispatch, id])
     return (
         <div className={styles.container}>
             {isLoading && <Loader />}
             <div className={styles.box_character}>
                 <div className={styles.box_character_img}>
-                    <SwiperDetail imageList={detailAuto.images} image={detailAuto.image} />
+                    <SwiperDetail imageList={detailAuto.images || []} image={detailAuto.image} />
                 </div>
                 <div className={styles.box_character_title}>
                     <div className={styles.title_character}>

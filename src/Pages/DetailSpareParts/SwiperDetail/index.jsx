@@ -3,8 +3,6 @@ import './SwiperDetail.css'
 import { FreeMode, Navigation, Thumbs, Keyboard } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
-import parts from './../../../assets/parts.png'
-import parts2 from './../../../assets/teslaBg.jpg'
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
@@ -14,7 +12,6 @@ import lgZoom from 'lightgallery/plugins/zoom';
 
 const SwiperDetailParts = ({ images, image }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    console.log(images);
     return (
         <LightGallery
             selector={'.gallery_item'}
@@ -43,7 +40,7 @@ const SwiperDetailParts = ({ images, image }) => {
                     images?.map((e, i) => (
                         <SwiperSlide key={i} className='swiperCardDetail'>
                             <a className='gallery_item' href={e?.image}>
-                                <img src={e.image} alt={'parts'} />
+                                <img src={e?.image} alt={'parts'} />
                             </a>
                         </SwiperSlide>
                     ))}
@@ -55,9 +52,8 @@ const SwiperDetailParts = ({ images, image }) => {
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
-                slidesPerView={3}
+                slidesPerView={images?.length + 1 || 3}
                 spaceBetween={10}
-                freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="SwiperDetailParts_mini"
