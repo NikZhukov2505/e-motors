@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
     const info = useSelector(state => state?.info?.info)
+    console.log(info);
     return (
         <header className={styles.header}>
             <div id='top' className={styles.header_block}>
