@@ -56,3 +56,18 @@
 .SwiperDetailParts_mini .swiper-slide-thumb-active {
     border: 3px solid #FFCD00;
 }
+
+@media (max-width:768px) {
+    .SwiperDetailParts {
+        width: 650px;
+        height: 50vh;
+
+    }
+
+    .SwiperDetailParts_mini {
+        width: 650px;
+        margin-bottom: 20px;
+    }
+
+
+}
