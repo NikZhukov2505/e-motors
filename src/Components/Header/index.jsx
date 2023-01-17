@@ -1,43 +1,33 @@
 import React from 'react';
 import styles from './Header.module.css'
-import logo from '../../assets/logo.png'
-import { NavLink, useLocation } from 'react-router-dom';
-import { WavyLink } from 'react-wavy-transitions';
+import { NavLink } from 'react-router-dom';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { HashLink } from 'react-router-hash-link';
-import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-    const info = useSelector(state => state.info.info)
-    const location = useLocation()
-    const params = useParams()
-    // console.log(params);
+    const info = useSelector(state => state?.info?.info)
     return (
         <header className={styles.header}>
             <div id='top' className={styles.header_block}>
                 <div className={styles.logo_block}>
-                    <WavyLink duration={700} color='#000' to={'/'}><img src={`http://176.126.166.199:8000${info.logo}`} alt="e_motors_logo" /></WavyLink>
+                    <NavLink to={'/'}><img src={`http://176.126.166.199:8000${info.logo}`} alt="e_motors_logo" /></NavLink>
                 </div>
                 <nav className={styles.nav}>
                     <ul className={styles.menu}>
-                        <li className={location.pathname == '/' ? styles.activeMenu_item : styles.menu_item}>
-                            <WavyLink duration={700} to={'/'} color={'#000'}>
-                                {/* <NavLink to={'/'} className={({ isActive }) =>
+                        <li>
+                            <NavLink to={'/'} className={({ isActive }) =>
                                 isActive ? styles.activeMenu_item : styles.menu_item
-                            }> */}
+                            }>
                                 Главная
-                                {/* </NavLink> */}
-                            </WavyLink>
+                            </NavLink>
                         </li>
-                        <li className={location.pathname == '/catalog' || location.pathname == '/detail-motors/1' ? styles.activeMenu_item : styles.menu_item}>
-                            <WavyLink duration={700} to={'/catalog'} color={'#000'}>
-                                {/* <NavLink className={({ isActive }) =>
-                            isActive ? styles.activeMenu_item : styles.menu_item
-                        } to={'/catalog'}> */}
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? styles.activeMenu_item : styles.menu_item
+                            } to={'/catalog'}>
                                 Каталог
-                                {/* </NavLink> */}
-                            </WavyLink>
+                            </NavLink>
                         </li>
                         <li><HashLink to={'/#about-us'} className={styles.links} >О нас</HashLink></li>
                         <li><Link
@@ -46,8 +36,10 @@ const Header = () => {
                             offset={-70}
                             activeClass={'active'}
                             duration={1500} className={styles.links} to='contacts'>Контакты</Link></li>
-                        <li className={location.pathname == '/parts' || location.pathname == '/detail-parts/1' ? styles.activeMenu_item : styles.menu_item}>
-                            <WavyLink duration={700} color={'#000'} to={'/parts'}>дополнительное</WavyLink>
+                        <li>
+                            <NavLink className={({ isActive }) =>
+                                isActive ? styles.activeMenu_item : styles.menu_item
+                            } to={'/parts'}>дополнительное</NavLink>
                         </li>
                     </ul>
                 </nav>

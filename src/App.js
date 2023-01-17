@@ -6,7 +6,6 @@ import Home from './Pages/Home/index';
 import CatalogPage from './Pages/CatalogPage/index';
 import DetailPage from './Pages/DetailPage/index';
 import Footer from './Components/Footer/index';
-import { WavyContainer } from 'react-wavy-transitions';
 import PartsPage from './Pages/PartsPage';
 import NotFound from './Pages/NotFound/NotFound';
 import DetailPageParts from './Pages/DetailSpareParts';
@@ -26,7 +25,6 @@ const App = () => {
   return (
     <>
       <Header />
-      <WavyContainer />
       <Routes>
         <Route index element={<Home />} />
         <Route path='/catalog' element={<CatalogPage />} />

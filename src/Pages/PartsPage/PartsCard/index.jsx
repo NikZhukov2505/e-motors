@@ -1,18 +1,17 @@
 import React from 'react';
 import styles from '../Parts.module.css'
-import { WavyLink } from 'react-wavy-transitions';
+import { Link } from 'react-router-dom';
 
 const PartsCard = ({ item }) => {
-    // console.log(item);
     return (
         <div className={`${styles.card} animate__animated animate__fadeInRight`}>
-            <WavyLink duration={700} color={'#000'} to={`/detail-parts/${item?.id}`}>
+            <Link to={`/detail-parts/${item?.id}`}>
                 <img src={item?.image} alt="motors" />
-            </WavyLink>
+            </Link>
             <h2>{item.name}</h2>
             <div className={styles.price_block}>
                 <h3>{item?.price}</h3>
-                <WavyLink duration={700} color={'#000'} to={`/detail-parts/${item?.id}`}>Подробнее</WavyLink>
+                <Link to={`/detail-parts/${item?.id}`}>Подробнее</Link>
             </div>
         </div>
     );

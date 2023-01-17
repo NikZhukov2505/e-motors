@@ -8,7 +8,7 @@ const NotFound = () => {
         setTimeout(() => {
             navigate('/')
         }, 3000)
-    }, [])
+    }, [navigate])
     return (
         <div className={styles.wrapper}>
             <h1>Oops! You seem to be lost.</h1>

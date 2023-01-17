@@ -8,12 +8,11 @@ import Card from './Card';
 import ListFilter from './ListFilter';
 import { getProductsAuto, setCategoryId, setCategoryName, setLiName, setStock } from '../../redux/motorsSlice';
 import Loader from '../../Components/Loader';
+import { getAutoByName } from './../../redux/motorsSlice';
 
 const CatalogPage = () => {
     const { categoryName, liName, categories, categoryId, productAuto, stock, isLoading } = useSelector(state => state?.motors)
     const dispatch = useDispatch()
-    // console.log(productAuto);
-
 
     useEffect(() => {
         dispatch(getProductsAuto({ stock, categoryId }))
@@ -26,11 +25,20 @@ const CatalogPage = () => {
         dispatch(setStock({ inStock }))
     }
 
+    const search = (e) => {
+        const name = e.target.value
+        if (name.length > 2) {
+            dispatch(getAutoByName(name))
+        } else if (name.length == 0) {
+            dispatch(getProductsAuto({ stock, categoryId }))
+        }
+    }
+
     return (
         <div className={styles.wrapper_catalog}>
             <div className={styles.container}>
                 <div className={styles.categories_block}>
-                    <input type="text" placeholder='Поиск' className={styles.search} />
+                    <input onChange={search} type="text" placeholder='Поиск' className={styles.search} />
                     <div>
                         {
                             categories &&
@@ -38,7 +46,7 @@ const CatalogPage = () => {
                                 <div key={c.id}>
                                     <div onClick={() => showActiveLi(c, 'all', '')} className={styles.dropDown}>
                                         <h4>{c.name}</h4>
-                                        <img className={categoryName == c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
+                                        <img className={categoryName === c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
                                     </div>
                                     {
                                         categoryName === c.name ?
