@@ -78,3 +78,13 @@
     font-weight: 500;
     line-height: 38.4px;
 }
+
+@media (max-width:768px) {
+    .box_character {
+        display: block;
+    }
+
+    .box_character_title {
+        gap: 20px;
+    }
+}

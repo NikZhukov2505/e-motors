@@ -6,7 +6,7 @@ import stock from '../../../assets/inStock.png'
 
 const Card = ({ item }) => {
     return (
-        <div className={`${styles.card} animate__animated animate__fadeInRight`}>
+        <div className={`${styles.card} animate__animated animate__fadeInUp`}>
             <WavyLink duration={700} color={'#000'} to={`/detail-motors/${item?.id}`}>
                 <div className={styles.item_foto_block}>
                     <img className={styles.car_img} src={item?.image} alt="motors" />

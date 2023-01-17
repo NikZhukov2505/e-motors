@@ -76,7 +76,7 @@
     background: #FFFFFF;
 }
 
-@media (max-width:767px) {
+@media (max-width:768px) {
     .SwiperAbout {
         height: 800px;
     }

@@ -126,9 +126,6 @@ const motorsSlice = createSlice({
         setLiName(state, action) {
             state.liName = action.payload
         },
-        // setPartsName(state, action) {
-        //     state.partsName = action.payload
-        // },
         setPartsLiName(state, action) {
             state.partsLiName = action.payload
         },

@@ -8,10 +8,14 @@ import ListFilter from './../CatalogPage/ListFilter/index';
 import { setPartsCategoriesId, setPartsLiName, setPartsName, setPartsStock } from '../../redux/motorsSlice';
 import { getProductsParts } from './../../redux/motorsSlice';
 import Loader from '../../Components/Loader';
+import arrow_catalog from './../../assets/arrow_catalog.png'
+
 
 
 const PartsPage = () => {
     const { partsName, partsLiName, partsCategories, productParts, partsStock, partsCategoriesId, isLoading } = useSelector(state => state?.motors)
+    const [showDropDawn, setShowDropDawn] = useState(false)
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -30,26 +34,31 @@ const PartsPage = () => {
             <div className={styles.container}>
                 <div className={styles.categories_block}>
                     <input type="text" placeholder='Поиск' className={styles.search} />
-                    <div>
-                        {
-                            partsCategories &&
-                            partsCategories.map(c => (
-                                <div key={c.id}>
-                                    <div onClick={() => showActivePartsLi(c, 'all', '')} className={styles.dropDown}>
-                                        <h4>{c.name}</h4>
-                                        <img className={partsName == c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
+                    <div className={styles.dropDownShow} >
+                        <div onClick={() => setShowDropDawn(!showDropDawn)} className={styles.catalogDropDown}>
+                            <h1>Каталог</h1>
+                            <img src={arrow_catalog} alt="arrow_catalog" className={showDropDawn ? styles.arrowRotate : ''} />
+                        </div>
+                        <div className={showDropDawn ? `${styles.categoryDropDownShow} animate__animated  ${window.screen.width <= 768 ? 'animate__fadeInLeft' : 'animate__fadeInLeft'}` : `${styles.dropDownNone} animate__animated `}>
+                            {
+                                partsCategories &&
+                                partsCategories.map(c => (
+                                    <div key={c.id}>
+                                        <div onClick={() => showActivePartsLi(c, 'all', '')} className={styles.dropDown}>
+                                            <h4>{c.name}</h4>
+                                            <img className={partsName == c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
+                                        </div>
+                                        {
+                                            partsName === c.name ?
+                                                <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={c} />
+                                                :
+                                                null
+                                        }
                                     </div>
-                                    {
-                                        partsName === c.name ?
-                                            <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={c} />
-                                            :
-                                            null
-                                    }
-                                </div>
-                            ))
-                        }
+                                ))
+                            }
 
-
+                        </div>
                     </div>
 
                 </div>

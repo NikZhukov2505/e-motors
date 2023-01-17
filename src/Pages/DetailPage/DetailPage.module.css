@@ -97,3 +97,10 @@
     font-family: 'Gotham', sans-serif;
     color: #FFFFFFCC;
 }
+
+@media (max-width:768px) {
+    .box_character {
+        display: block;
+
+    }
+}
