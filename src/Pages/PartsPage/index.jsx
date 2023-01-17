@@ -8,6 +8,7 @@ import ListFilter from './../CatalogPage/ListFilter/index';
 import { getPartsByName, setPartsCategoriesId, setPartsLiName, setPartsName, setPartsStock } from '../../redux/motorsSlice';
 import { getProductsParts } from './../../redux/motorsSlice';
 import Loader from '../../Components/Loader';
+import { Helmet } from 'react-helmet-async';
 
 
 const PartsPage = () => {
@@ -35,51 +36,56 @@ const PartsPage = () => {
     }
 
     return (
-        <div className={styles.parts_wrapper}>
-            <div className={styles.container}>
-                <div className={styles.categories_block}>
-                    <input onChange={search} type="text" placeholder='Поиск' className={styles.search} />
-                    <div>
-                        {
-                            partsCategories &&
-                            partsCategories.map(c => (
-                                <div key={c.id}>
-                                    <div onClick={() => showActivePartsLi(c, 'all', '')} className={styles.dropDown}>
-                                        <h4>{c.name}</h4>
-                                        <img className={partsName === c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
+        <>
+            <Helmet>
+                <title>Дополнительно | Emotors.kg</title>
+            </Helmet>
+            <div className={styles.parts_wrapper}>
+                <div className={styles.container}>
+                    <div className={styles.categories_block}>
+                        <input onChange={search} type="text" placeholder='Поиск' className={styles.search} />
+                        <div>
+                            {
+                                partsCategories &&
+                                partsCategories.map(c => (
+                                    <div key={c.id}>
+                                        <div onClick={() => showActivePartsLi(c, 'all', '')} className={styles.dropDown}>
+                                            <h4>{c.name}</h4>
+                                            <img className={partsName === c.name ? styles.arrow : null} src={dropDown} alt="drop-down" />
+                                        </div>
+                                        {
+                                            partsName === c.name ?
+                                                <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={c} />
+                                                :
+                                                null
+                                        }
                                     </div>
-                                    {
-                                        partsName === c.name ?
-                                            <ListFilter showActiveLi={showActivePartsLi} categoryName={partsName} liNameCategory={partsLiName} category={c} />
-                                            :
-                                            null
-                                    }
-                                </div>
-                            ))
-                        }
+                                ))
+                            }
 
+
+                        </div>
 
                     </div>
-
-                </div>
-                <div className={styles.cards}>
-                    {
-                        isLoading ?
-                            <div className={styles.loader}>
-                                <Loader />
-                            </div>
-                            :
-                            productParts.length > 0 ?
-                                productParts?.map(e => (
-                                    <PartsCard key={e.id} item={e} />
-                                ))
-
+                    <div className={styles.cards}>
+                        {
+                            isLoading ?
+                                <div className={styles.loader}>
+                                    <Loader />
+                                </div>
                                 :
-                                <h1 className={styles.empty}>Товаров нет!</h1>
-                    }
+                                productParts.length > 0 ?
+                                    productParts?.map(e => (
+                                        <PartsCard key={e.id} item={e} />
+                                    ))
+
+                                    :
+                                    <h1 className={styles.empty}>Товаров нет!</h1>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

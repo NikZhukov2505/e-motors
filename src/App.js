@@ -12,6 +12,7 @@ import DetailPageParts from './Pages/DetailSpareParts';
 import { useDispatch } from 'react-redux';
 import { getAllInfo } from './redux/infoSlice';
 import { getAllCategories, getAllCategoriesParts } from './redux/motorsSlice';
+import { HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
   const dispatch = useDispatch()
@@ -24,16 +25,18 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path='/catalog' element={<CatalogPage />} />
-        <Route path='/detail-motors/:id' element={<DetailPage />} />
-        <Route path='/parts' element={<PartsPage />} />
-        <Route path='/detail-parts/:parts_id' element={<DetailPageParts />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-      <Footer />
+      <HelmetProvider>
+        <Header />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path='/catalog' element={<CatalogPage />} />
+          <Route path='/detail-motors/:id' element={<DetailPage />} />
+          <Route path='/parts' element={<PartsPage />} />
+          <Route path='/detail-parts/:parts_id' element={<DetailPageParts />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </HelmetProvider>
     </>
   );
 };
