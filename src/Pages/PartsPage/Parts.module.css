@@ -287,12 +287,6 @@
         font-size: 12px;
     }
 
-    .card {
-        flex: 0 1 45%;
-    }
-}
-
-@media (max-width:768px) {
     .categories_block {
         display: block;
     }
@@ -360,6 +354,124 @@
     .arrowRotate {
         transform: rotate(-90deg);
         transition: 0.5s;
+    }
+}
+
+@media (max-width:768px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .categories_block {
+        display: block;
+    }
+
+
+    .card {
+        flex: 0 1 47%;
+    }
+
+    .cards {
+        margin-top: 20px;
+    }
+
+    .catalogDropDown {
+        width: 100%;
+        height: 60px;
+        background: #001D3D;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .catalogDropDown:active {
+        background: #003566;
+    }
+
+    .dropDownNone {
+        display: none;
+    }
+
+    .categoryDropDownShow {
+        transition: 1s;
+        display: block;
+        margin-bottom: 20px;
+        background: #001D3DB2;
+        transition: 0.5s;
+        padding: 10px;
+        border-radius: 10px;
+
+
+    }
+
+    .catalogDropDown img {
+        width: 20px;
+        height: 30px;
+    }
+
+    .catalogDropDown h1 {
+        font-family: 'Gotham', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .arrowRotate {
+        transform: rotate(-90deg);
+        transition: 0.5s;
+    }
+
+}
+
+@media (max-width:390px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .search {
+        font-size: 14px;
+    }
+
+    .dropDown h4 {
+        font-size: 15px;
+    }
+
+    .card h2 {
+        font-size: 12px;
+        padding: 0 10px;
+        height: 70px;
+    }
+
+    .info_block {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .price_block h3 {
+        font-size: 15px;
+    }
+
+    .price_block {
+        padding: 0 10px;
+    }
+
+    .price_block a {
+        font-size: 10px;
+        width: 70px;
+    }
+
+    .car_img {
+        height: 180px;
     }
 
 }

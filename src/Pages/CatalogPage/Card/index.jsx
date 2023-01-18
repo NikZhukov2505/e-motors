@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ item }) => {
     return (
-        <div className={`${styles.card} animate__animated animate__fadeInRight`}>
+        <div className={`${styles.card} animate__animated ${window.screen.width <= 992 ? 'animate__fadeInUp' : ' animate__fadeInRight '}`}  >
             <Link to={`/detail-motors/${item?.id}`}>
                 <div className={styles.item_foto_block}>
                     <img className={styles.car_img} src={item?.image} alt="motors" />

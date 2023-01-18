@@ -57,6 +57,34 @@
     border: 3px solid #FFCD00;
 }
 
+@media (max-width:1200px) {
+    .SwiperDetailParts {
+        width: 650px;
+        height: 50vh;
+
+    }
+
+    .SwiperDetailParts_mini {
+        width: 650px;
+        margin-bottom: 0px;
+    }
+
+}
+
+@media (max-width:992px) {
+    .SwiperDetailParts {
+        width: 840px;
+        height: 50vh;
+
+    }
+
+    .SwiperDetailParts_mini {
+        width: 840px;
+        margin-bottom: 10px;
+    }
+
+}
+
 @media (max-width:768px) {
     .SwiperDetailParts {
         width: 650px;
@@ -67,6 +95,33 @@
     .SwiperDetailParts_mini {
         width: 650px;
         margin-bottom: 20px;
+    }
+
+
+}
+
+@media (max-width:600px) {
+    .SwiperDetailParts {
+        width: 480px;
+
+    }
+
+    .SwiperDetailParts_mini {
+        width: 480px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:415px) {
+    .SwiperDetailParts {
+        width: 340px;
+        height: 100%;
+
+    }
+
+    .SwiperDetailParts_mini {
+        width: 340px;
+        margin-bottom: 10px;
     }
 
 

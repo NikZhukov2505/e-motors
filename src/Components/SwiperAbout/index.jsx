@@ -26,19 +26,7 @@ const SwiperAbout = () => {
             pagination={{ clickable: true }}
             effect='fade'
         >
-            <SwiperSlide >
-                <div className='slideAbout-Card'>
-                    <div className="about_box-img">
-                        <img src={slideAboutImg} alt="slideAboutImg" />
-                    </div>
-                    <div className="about_box-title">
-                        <div className="about_center-box-title">
-                            <h2>о нас</h2>
-                            <p>{info.text}</p>
-                        </div>
-                    </div>
-                </div>
-            </SwiperSlide>
+
             <SwiperSlide>
                 <div className='slideAbout-Card'>
                     <div className="about_box-img">
@@ -47,7 +35,7 @@ const SwiperAbout = () => {
                     <div className="about_box-title">
                         <div className="about_center-box-title">
                             <h2>о нас</h2>
-                            <p>{info.text}</p>
+                            <p>Наша компания занимается доставкой и продажей электромобилей из Китая под заказ. Мы работаем только с проверенными автопроизводителями, сотрудники нашего офиса в Китае, проверяют каждый автомобиль перед покупкой. Электромобили, которые везем под заказ находятся на нашей площадке в Китае, а те электромобили, которые уже есть на площадке в Бишкеке, доступны к продаже уже сейчас.</p>
                         </div>
                     </div>
                 </div>

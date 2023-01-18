@@ -75,6 +75,7 @@ const CatalogPage = () => {
                                     }
                                 </div>
                             </div>
+
                         </div>
 
                         <div className={styles.cards}>

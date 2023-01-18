@@ -4,6 +4,8 @@
     border-radius: 10px;
 }
 
+
+
 .SwiperDetail .swiperCardDetail img {
     width: 100%;
     aspect-ratio: 20/13;
@@ -53,7 +55,7 @@
     border: 3px solid #FFCD00;
 }
 
-@media (max-width:768px) {
+@media (max-width:1200px) {
     .SwiperDetail {
         width: 650px;
         height: 50vh;
@@ -62,7 +64,65 @@
 
     .SwiperDetail_mini {
         width: 650px;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
+    }
+
+}
+
+@media (max-width:992px) {
+    .SwiperDetail {
+        width: 840px;
+        height: 50vh;
+
+    }
+
+    .SwiperDetail_mini {
+        width: 840px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width:768px) {
+    .swiperCardDetail {
+        width: 650px;
+        height: 100%;
+    }
+
+    .SwiperDetail {
+        width: 650px;
+        height: 100%;
+
+    }
+
+    .SwiperDetail_mini {
+        width: 650px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:600px) {
+    .SwiperDetail {
+        width: 480px;
+
+    }
+
+    .SwiperDetail_mini {
+        width: 480px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:415px) {
+    .SwiperDetail {
+        width: 340px;
+        height: 100%;
+
+    }
+
+    .SwiperDetail_mini {
+        width: 340px;
+        margin-bottom: 10px;
     }
 
 
