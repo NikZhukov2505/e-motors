@@ -436,6 +436,11 @@
         transition: 0.5s;
     }
 
+    .price_block a {
+        font-size: 12px;
+        width: 90px;
+    }
+
 }
 
 @media (max-width:390px) {

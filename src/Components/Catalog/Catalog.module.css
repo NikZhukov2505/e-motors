@@ -140,6 +140,10 @@
         width: 17%;
 
     }
+
+    .card_categories p {
+        font-size: 12px;
+    }
 }
 
 @media (max-width:415px) {

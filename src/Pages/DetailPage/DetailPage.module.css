@@ -151,6 +151,11 @@
     .title_character button {
         margin-top: 15px;
     }
+
+    .price_block a {
+        font-size: 12px;
+        width: 90px;
+    }
 }
 
 @media (max-width:390px) {
