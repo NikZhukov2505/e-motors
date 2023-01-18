@@ -7,6 +7,7 @@
     flex-direction: column;
     text-transform: uppercase;
     gap: 5%;
+    text-align: center;
 }
 
 .wrapper h1 {
@@ -21,4 +22,30 @@
     color: red;
     text-shadow: 4px 14px 10px red;
 
+}
+
+@media (max-width:1200px) {
+    .wrapper h1 {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper h1 {
+        font-size: 50px;
+    }
+
+    .wrapper a {
+        font-size: 40px;
+    }
+}
+
+@media (max-width:767px) {
+    .wrapper h1 {
+        font-size: 20px;
+    }
+
+    .wrapper a {
+        font-size: 18px;
+    }
 }

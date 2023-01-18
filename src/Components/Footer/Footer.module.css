@@ -73,6 +73,24 @@
     transform: scale(1.1);
 }
 
+@media (min-width:1920px) {
+    .container {
+        width: 1440px;
+    }
+}
+
+@media (max-width:992px) {
+
+    .box_contact_info a,
+    .box_contact_info p {
+        font-size: 14px;
+    }
+
+    #contact_number {
+        font-size: 14px;
+    }
+}
+
 @media (max-width:768px) {
     .footer {
         padding: 0;
