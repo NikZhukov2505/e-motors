@@ -7,7 +7,7 @@ const PartsCard = ({ item }) => {
     return (
         <div className={`${styles.card} animate__animated animate__fadeInRight`}>
             <Link to={`/detail-parts/${item?.id}`}>
-                <img src={item?.image} alt="motors" />
+                <img className={styles.part_img} src={item?.image} alt="motors" />
                 {item?.in_stock ? <img title='В наличии' id={styles.stock} src={stock} alt='inStock' /> : null}
             </Link>
             <h2>{item.name}</h2>

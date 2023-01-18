@@ -10,7 +10,6 @@ const Home = () => {
         <>
             <Helmet>
                 <title>Главная | Emotors.kg</title>
-                <meta name='description' content='emotors.kg - Электромобили в Бишкеке, элетромобили под заказ, электромобили электробайки и электросамокаты, новые и б/у электромобили' />
             </Helmet>
             <main>
                 <SwiperTop />
