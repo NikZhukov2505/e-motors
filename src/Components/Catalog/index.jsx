@@ -41,7 +41,9 @@ const Catalog = () => {
                                     </div>
                                     <p>{c.name}</p>
                                 </Link>
+
                             ))
+
                         }
                     </>
 

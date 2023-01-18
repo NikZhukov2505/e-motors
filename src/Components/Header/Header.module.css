@@ -116,6 +116,11 @@
     .nav {
         display: none;
     }
+
+    .connect_block {
+        display: none;
+
+    }
 }
 
 

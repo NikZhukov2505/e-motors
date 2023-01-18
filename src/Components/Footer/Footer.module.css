@@ -89,6 +89,31 @@
     #contact_number {
         font-size: 14px;
     }
+
+    .footer {
+        padding: 0;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .box_logo {
+        width: 25%;
+        margin: 0 auto;
+    }
+
+    .box_contact_info p {
+        text-align: center;
+    }
+
+    .box_contact {
+        align-items: center;
+    }
+
+    .box_contact_icons {
+        margin-bottom: 10%;
+    }
 }
 
 @media (max-width:768px) {
@@ -115,5 +140,11 @@
 
     .box_contact_icons {
         margin-bottom: 10%;
+    }
+}
+
+@media (max-width:415px) {
+    .box_logo {
+        width: 40%;
     }
 }

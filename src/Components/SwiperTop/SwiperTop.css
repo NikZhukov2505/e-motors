@@ -1,5 +1,5 @@
 .SwiperTop {
-    height: 70vh;
+    height: 100%;
 }
 
 .slideCard img {
@@ -35,9 +35,7 @@
 
 
 @media (max-width:768px) {
-    .SwiperTop {
-        height: 35vh;
-    }
+
 
     .slideCard img {
         aspect-ratio: 6/4;
@@ -46,3 +44,24 @@
     }
 
 }
+
+/* @media (max-width:1440px) {
+    .SwiperTop {
+        height: 100%;
+    }
+
+}
+
+@media (max-width:992px) {
+    .SwiperTop {
+        height: 100%;
+    }
+
+} */
+
+/* @media (min-width:1920px) {
+    .SwiperTop {
+        width: 1920px;
+        margin: 0 auto;
+    }
+} */
