@@ -15,3 +15,15 @@
 .active {
     color: #FFCD00;
 }
+
+@media (max-width:1200px) {
+    .radio {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:992px) {
+    .radio {
+        font-size: 12px;
+    }
+}

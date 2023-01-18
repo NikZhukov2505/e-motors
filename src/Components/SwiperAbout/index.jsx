@@ -9,7 +9,7 @@ import teslaSwiperAbout from './../../assets/teslaSwiperAbout.jpg'
 import { useSelector } from 'react-redux';
 
 const SwiperAbout = () => {
-    const info = useSelector(state => state.info.info)
+    const info = useSelector(state => state?.info?.info)
     return (
         <Swiper id='about-us' className='SwiperAbout'
             modules={[Pagination, A11y, Autoplay, Keyboard, EffectFade]}

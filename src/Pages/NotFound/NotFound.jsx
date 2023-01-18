@@ -16,7 +16,7 @@ const NotFound = () => {
                 <title>404 | Emotors.kg</title>
             </Helmet>
             <div className={styles.wrapper}>
-                <h1>Oops! You seem to be lost.</h1>
+                <h1>Oops! Page not found 404!</h1>
                 <Link to='/'>вжух и на Главную</Link>
             </div>
         </>

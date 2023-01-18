@@ -141,6 +141,7 @@
 .card h2 {
     margin: 15px 0;
     font-size: 20px;
+    height: 50px;
     line-height: 24px;
     font-family: 'Gotham', sans-serif;
     font-weight: 500;
@@ -152,6 +153,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 20px;
     margin: 15px 0;
     padding: 0 20px;
     font-size: 14px;
@@ -230,6 +232,62 @@
     display: none;
 }
 
+@media (min-width:1920px) {
+    .container {
+        width: 1440px;
+    }
+}
+
+@media (max-width:1200px) {
+    .search {
+        font-size: 14px;
+    }
+
+    .dropDown h4 {
+        font-size: 15px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .info_block {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .price_block h3 {
+        font-size: 16px;
+    }
+
+    .price_block {
+        padding: 0 10px;
+    }
+
+    .price_block a {
+        font-size: 14px;
+        width: 110px;
+    }
+
+    .car_img {
+        height: 180px;
+    }
+}
+
+@media (max-width:992px) {
+    .search {
+        font-size: 12px;
+    }
+
+    .dropDown h4 {
+        font-size: 12px;
+    }
+
+    .card {
+        flex: 0 1 45%;
+    }
+}
 
 @media (max-width:768px) {
     .categories_block {

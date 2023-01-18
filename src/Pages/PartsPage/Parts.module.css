@@ -129,9 +129,14 @@
     object-position: center;
 }
 
+.part_img {
+    height: 200px;
+}
+
 .card h2 {
     margin: 15px 0;
-    font-size: 20px;
+    height: 80px;
+    font-size: 18px;
     line-height: 24px;
     font-family: 'Gotham', sans-serif;
     font-weight: 500;
@@ -167,7 +172,13 @@
     color: #FFCD00;
 }
 
-.price_block button {
+.price_block a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Gotham', sans-serif;
     color: #FFCD00;
     width: 148px;
     height: 39px;
@@ -177,12 +188,12 @@
     transition: 0.5s;
 }
 
-.price_block button:hover {
+.price_block a:hover {
     background-color: #FFCD00;
     color: #000;
 }
 
-.price_block button:active {
+.price_block a:active {
     background-color: #000;
     color: #FFCD00;
 }
@@ -222,6 +233,63 @@
 
 .catalogDropDown {
     display: none;
+}
+
+@media (min-width:1920px) {
+    .container {
+        width: 1440px;
+    }
+}
+
+@media (max-width:1200px) {
+    .search {
+        font-size: 14px;
+    }
+
+    .dropDown h4 {
+        font-size: 15px;
+    }
+
+    .card h2 {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .info_block {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .price_block h3 {
+        font-size: 16px;
+    }
+
+    .price_block {
+        padding: 0 10px;
+    }
+
+    .price_block a {
+        font-size: 14px;
+        width: 120px;
+    }
+
+    .part_img {
+        height: 180px;
+    }
+}
+
+@media (max-width:992px) {
+    .search {
+        font-size: 12px;
+    }
+
+    .dropDown h4 {
+        font-size: 12px;
+    }
+
+    .card {
+        flex: 0 1 45%;
+    }
 }
 
 @media (max-width:768px) {
