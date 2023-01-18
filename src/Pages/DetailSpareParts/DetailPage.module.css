@@ -79,6 +79,15 @@
     line-height: 38.4px;
 }
 
+@media (min-width:1920px) {
+    .container {
+        width: 1440px;
+    }
+
+    .box_character {
+        gap: 1%;
+    }
+}
 
 @media (max-width:992px) {
     .title_character h2 {
@@ -114,6 +123,7 @@
         margin-top: 15px;
     }
 }
+
 
 @media (max-width:390px) {
     .container {
