@@ -276,6 +276,11 @@
 }
 
 @media (max-width:992px) {
+    .container {
+        margin: 20px auto;
+
+    }
+
     .search {
         font-size: 12px;
     }
