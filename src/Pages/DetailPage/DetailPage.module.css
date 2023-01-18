@@ -123,6 +123,11 @@
 }
 
 @media (max-width:992px) {
+    .container {
+        margin: 20px auto;
+
+    }
+
     .box_character {
         display: block;
 

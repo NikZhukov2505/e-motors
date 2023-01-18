@@ -3,8 +3,14 @@ import { NavLink } from 'react-router-dom';
 import styles from './BurgerMenu.module.css'
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-scroll';
+import { useSelector } from 'react-redux';
+import telegram from './../../../assets/telegram.png'
+import whatsapp from './../../../assets/whatsapp.png'
+import instagram from './../../../assets/instagram.png'
 const BurgerMenu = () => {
     const [burgerActive, setBurgerActive] = useState(false)
+    const info = useSelector(state => state.info.info)
+
     return (
         <div className={styles.burgerMenu}>
             <div onClick={() => setBurgerActive(!burgerActive)} className={burgerActive ? styles.menu_btn_active : styles.menu_btn}>
@@ -48,6 +54,11 @@ const BurgerMenu = () => {
                     <a href='#'>
                         <button className={styles.connect_btn}>Связаться с нами</button>
                     </a>
+                </div>
+                <div className={`${styles.box_contact_info} ${styles.box_contact_icons}`}>
+                    <a href={info.telegram} target="_blank"><img src={telegram} alt="telegram" /></a>
+                    <a href={info.whatsapp} target="_blank"><img src={whatsapp} alt="whatsapp" /></a>
+                    <a href={info.instagram} target="_blank"><img src={instagram} alt="instagram" /></a>
                 </div>
             </div >
         </div >

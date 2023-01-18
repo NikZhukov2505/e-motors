@@ -31,7 +31,8 @@ const Footer = () => {
                     </div>
                     <div className={styles.box_contact_info}>
                         <p>Наша почта:</p>
-                        <a href={`mailto:${info.email}`}>Почта: {info.email}</a>
+                        <p>Почта:</p>
+                        <a href={`mailto:${info.email}`}> {info.email}</a>
                     </div>
                     <div className={`${styles.box_contact_info} ${styles.box_contact_icons}`}>
                         <a href={info.telegram} target="_blank"><img src={telegram} alt="telegram" /></a>

@@ -6,14 +6,15 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDetailProductParts } from '../../redux/motorsSlice';
 import { Helmet } from 'react-helmet-async';
+import Loader from './../../Components/Loader/index';
 
 
 const DetailPageParts = () => {
     const { parts_id } = useParams()
-    const detailParts = useSelector(state => state?.motors?.detailParts)
+    const { detailParts, isLoading } = useSelector(state => state?.motors)
     const dispatch = useDispatch()
 
-
+    console.log(isLoading);
     useEffect(() => {
         dispatch(getDetailProductParts(parts_id))
         window.scrollTo(0, 0)
@@ -25,6 +26,7 @@ const DetailPageParts = () => {
                 <title>{`${detailParts?.name}`} | Emotors.kg</title>
             </Helmet>
             <div className={styles.container}>
+                {isLoading && <Loader />}
                 <div className={styles.box_character}>
                     <div className={styles.box_character_img}>
                         <SwiperDetailParts images={detailParts?.images || []} image={detailParts?.image} />

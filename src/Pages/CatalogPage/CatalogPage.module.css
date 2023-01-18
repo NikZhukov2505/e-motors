@@ -276,6 +276,11 @@
 }
 
 @media (max-width:992px) {
+    .container {
+        margin: 20px auto;
+
+    }
+
     .search {
         font-size: 12px;
     }
@@ -355,6 +360,11 @@
 }
 
 @media (max-width:768px) {
+
+    .loader {
+        flex: 0 1 100%;
+    }
+
     .container {
         margin: 20px auto;
     }
@@ -470,6 +480,7 @@
     .car_img {
         height: 180px;
     }
+
 
 }
 
