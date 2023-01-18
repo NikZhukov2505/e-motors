@@ -7,6 +7,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 1%;
 }
 
 .box_character_img {
@@ -37,7 +38,6 @@
     font-family: 'Gotham' sans-serif;
     font-style: normal;
     font-weight: 900;
-
     font-size: 24px;
     line-height: 29px;
     text-transform: uppercase;
@@ -96,6 +96,30 @@
     font-weight: 500;
     font-family: 'Gotham', sans-serif;
     color: #FFFFFFCC;
+}
+
+@media (min-width:1920px) {
+    .container {
+        width: 1440px;
+    }
+}
+
+@media (max-width:1200px) {
+    .box_character {
+        gap: 1%;
+    }
+
+    .price_text {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 28px;
+    }
+
+    .title_character button {
+        font-size: 22px;
+    }
 }
 
 @media (max-width:992px) {

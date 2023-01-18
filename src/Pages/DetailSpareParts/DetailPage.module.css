@@ -7,6 +7,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 1%;
 }
 
 .box_character_img {
@@ -79,6 +80,15 @@
     line-height: 38.4px;
 }
 
+@media (min-width:1920px) {
+    .container {
+        width: 1440px;
+    }
+
+    .box_character {
+        gap: 1%;
+    }
+}
 
 @media (max-width:992px) {
     .container {
@@ -119,6 +129,7 @@
         margin-top: 15px;
     }
 }
+
 
 @media (max-width:390px) {
     .container {

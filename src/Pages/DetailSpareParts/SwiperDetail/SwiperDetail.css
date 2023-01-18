@@ -57,6 +57,16 @@
     border: 3px solid #FFCD00;
 }
 
+@media (max-width:1400px) {
+    .SwiperDetailParts {
+        width: 800px;
+    }
+
+    .SwiperDetailParts_mini {
+        width: 800px;
+    }
+}
+
 @media (max-width:1200px) {
     .SwiperDetailParts {
         width: 650px;
@@ -73,14 +83,13 @@
 
 @media (max-width:992px) {
     .SwiperDetailParts {
-
         width: 100%;
         height: 100%;
 
     }
 
     .SwiperDetailParts_mini {
-        width: 100%;
+        width: 340px;
         margin-bottom: 10px;
     }
 
