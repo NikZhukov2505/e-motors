@@ -360,6 +360,11 @@
 }
 
 @media (max-width:768px) {
+
+    .loader {
+        flex: 0 1 100%;
+    }
+
     .container {
         margin: 20px auto;
     }
@@ -475,6 +480,7 @@
     .car_img {
         height: 180px;
     }
+
 
 }
 

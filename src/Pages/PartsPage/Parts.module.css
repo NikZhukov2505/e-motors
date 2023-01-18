@@ -363,6 +363,10 @@
 }
 
 @media (max-width:768px) {
+    .loader {
+        flex: 0 1 100%;
+    }
+
     .container {
         margin: 20px auto;
     }
@@ -468,7 +472,7 @@
     }
 
     .price_block h3 {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .price_block {
@@ -476,7 +480,7 @@
     }
 
     .price_block a {
-        font-size: 10px;
+        font-size: 9px;
         width: 70px;
     }
 
