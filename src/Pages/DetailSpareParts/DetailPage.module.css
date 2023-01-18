@@ -7,6 +7,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 1%;
 }
 
 .box_character_img {

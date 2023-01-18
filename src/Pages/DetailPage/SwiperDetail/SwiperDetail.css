@@ -55,6 +55,16 @@
     border: 3px solid #FFCD00;
 }
 
+@media (max-width:1400px) {
+    .SwiperDetail {
+        width: 800px;
+    }
+
+    .SwiperDetail_mini {
+        width: 800px;
+    }
+}
+
 @media (max-width:1200px) {
     .SwiperDetail {
         width: 650px;
