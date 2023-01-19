@@ -141,12 +141,13 @@
 .card h2 {
     margin: 15px 0;
     font-size: 20px;
-    height: 50px;
+    height: 40px;
     line-height: 24px;
     font-family: 'Gotham', sans-serif;
     font-weight: 500;
     color: #fff;
     padding: 0 20px;
+
 }
 
 .info_block {
@@ -456,7 +457,6 @@
     .card h2 {
         font-size: 16px;
         padding: 0 10px;
-        height: 60px;
     }
 
     .info_block {
@@ -478,7 +478,7 @@
     }
 
     .car_img {
-        height: 180px;
+        height: 150px;
     }
 
 
