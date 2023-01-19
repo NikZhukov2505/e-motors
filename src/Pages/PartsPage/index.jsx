@@ -34,7 +34,7 @@ const PartsPage = () => {
         const name = e.target.value
         if (name.length > 2) {
             dispatch(getPartsByName(name))
-        } else if (name.length == 0) {
+        } else if (name.length === 0) {
             dispatch(getProductsParts({ partsStock, partsCategoriesId }))
         }
     }

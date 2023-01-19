@@ -20,7 +20,7 @@ const CatalogPage = () => {
 
     useEffect(() => {
         dispatch(getProductsAuto({ stock, categoryId }))
-    }, [categoryId, stock])
+    }, [categoryId, stock, dispatch])
 
     const showActiveLi = (category, name, inStock) => {
         dispatch(setLiName(name))
@@ -33,7 +33,7 @@ const CatalogPage = () => {
         const name = e.target.value
         if (name.length > 2) {
             dispatch(getAutoByName(name))
-        } else if (name.length == 0) {
+        } else if (name.length === 0) {
             dispatch(getProductsAuto({ stock, categoryId }))
         }
     }

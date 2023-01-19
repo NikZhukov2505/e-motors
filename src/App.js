@@ -28,7 +28,7 @@ const App = () => {
       <HelmetProvider>
         <Header />
         <Routes>
-          <Route index element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/catalog' element={<CatalogPage />} />
           <Route path='/detail-motors/:id' element={<DetailPage />} />
           <Route path='/parts' element={<PartsPage />} />
