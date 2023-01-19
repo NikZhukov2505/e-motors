@@ -13,7 +13,7 @@ const Card = ({ item }) => {
                     {item?.in_stock ? <img title='В наличии' id={styles.stock} src={stock} alt='inStock' /> : null}
                 </div>
             </Link>
-            <h2>{item.name}</h2>
+            <h2>{item?.name}</h2>
             <div className={styles.info_block}>
                 <p>Запас хода:</p>
                 <span>{item?.power_reserve}</span>
