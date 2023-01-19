@@ -23,7 +23,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.box_contact}>
                     <div className={styles.box_contact_info}>
-                        <p ><a id={styles.contact_number} href={info.phone_number}>{info.phone_number}</a></p>
+                        <p ><a id={styles.contact_number} href={`tel:${info.phone_number}`}>{info.phone_number}</a></p>
                     </div>
                     <div className={styles.box_contact_info}>
                         <p>Наш адрес:</p>
