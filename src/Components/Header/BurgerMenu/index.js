@@ -9,7 +9,7 @@ import whatsapp from './../../../assets/whatsapp.png'
 import instagram from './../../../assets/instagram.png'
 const BurgerMenu = () => {
     const [burgerActive, setBurgerActive] = useState(false)
-    const info = useSelector(state => state.info.info)
+    const info = useSelector(state => state?.info?.info)
 
     return (
         <div className={styles.burgerMenu}>
@@ -51,7 +51,7 @@ const BurgerMenu = () => {
                     </ul>
                 </nav>
                 <div className={styles.connect_block}>
-                    <a href='#'>
+                    <a href={info.whatsapp}>
                         <button className={styles.connect_btn}>Связаться с нами</button>
                     </a>
                 </div>

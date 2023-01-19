@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 
 const SwiperAbout = () => {
     const info = useSelector(state => state?.info?.info)
-    console.log(info);
     return (
         <Swiper id='about-us' className='SwiperAbout'
             modules={[Pagination, A11y, Autoplay, Keyboard, EffectFade]}

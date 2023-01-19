@@ -156,6 +156,10 @@
         font-size: 12px;
         width: 90px;
     }
+
+    .feature {
+        margin: 15px 0;
+    }
 }
 
 @media (max-width:390px) {

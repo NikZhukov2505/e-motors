@@ -14,8 +14,8 @@ import { Helmet } from 'react-helmet-async';
 const DetailPage = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    const { detailAuto, isLoading } = useSelector(state => state.motors)
-    const info = useSelector(state => state.info.info)
+    const { detailAuto, isLoading } = useSelector(state => state?.motors)
+    const info = useSelector(state => state?.info?.info)
 
 
     useEffect(() => {
