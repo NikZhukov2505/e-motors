@@ -14,6 +14,7 @@ const Home = () => {
             <main>
                 <SwiperTop />
                 <Catalog />
+                <h1 className='company_name'>Emotors.kg</h1>
                 <SwiperAbout />
             </main>
         </>

@@ -12,9 +12,9 @@ import Loader from './../../Components/Loader/index';
 const DetailPageParts = () => {
     const { parts_id } = useParams()
     const { detailParts, isLoading } = useSelector(state => state?.motors)
+    const info = useSelector(state => state?.info?.info)
     const dispatch = useDispatch()
 
-    console.log(isLoading);
     useEffect(() => {
         dispatch(getDetailProductParts(parts_id))
         window.scrollTo(0, 0)
@@ -40,7 +40,9 @@ const DetailPageParts = () => {
                             <h2 className={styles.price}>{detailParts?.price}</h2>
                         </div>
                         <div className={styles.title_character}>
-                            <button>заказать</button>
+                            <a href={info.whatsapp}>
+                                <button>заказать</button>
+                            </a>
                         </div>
                     </div>
                 </div>

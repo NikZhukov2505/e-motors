@@ -58,7 +58,6 @@ export const getAllCategoriesParts = createAsyncThunk(
             }
             dispatch(setPartsName(res.data[0].name))
             return res.data
-            // console.log(res);
         } catch (error) {
             return rejectWithValue(error.message)
         }

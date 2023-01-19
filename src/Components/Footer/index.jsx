@@ -7,7 +7,7 @@ import { Link } from 'react-scroll';
 import { useSelector } from 'react-redux';
 
 const Footer = () => {
-    const info = useSelector(state => state.info.info)
+    const info = useSelector(state => state?.info?.info)
     return (
         <footer id='contacts' className={styles.footer}>
             <div className={styles.container}>

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 
 const SwiperTop = () => {
-    const info = useSelector(state => state.info.info)
+    const info = useSelector(state => state?.info?.info)
     return (
         <Swiper
             modules={[Pagination, A11y, Autoplay, Keyboard, EffectFade]}
