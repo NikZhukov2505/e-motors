@@ -5,7 +5,7 @@ const Feature = ({ name, description }) => {
     return (
         <div className={styles.block_feature}>
             <p className={styles.title}>{name}</p>
-            <span className={styles.title_name}>{name === 'Наличие:' && description === true ? 'В наличии' : description + ''}</span>
+            <span className={styles.title_name}>{description}</span>
         </div>
     );
 };
