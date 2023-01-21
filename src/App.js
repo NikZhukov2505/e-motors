@@ -28,12 +28,12 @@ const App = () => {
       <HelmetProvider>
         <Header />
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/catalog' element={<CatalogPage />} />
-          <Route exact path='/detail-motors/:id' element={<DetailPage />} />
-          <Route exact path='/parts' element={<PartsPage />} />
-          <Route exact path='/detail-parts/:parts_id' element={<DetailPageParts />} />
-          <Route exact path='*' element={<NotFound />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/catalog' element={<CatalogPage />} />
+          <Route path='/detail-motors/:id' element={<DetailPage />} />
+          <Route path='/parts' element={<PartsPage />} />
+          <Route path='/detail-parts/:parts_id' element={<DetailPageParts />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
       </HelmetProvider>
