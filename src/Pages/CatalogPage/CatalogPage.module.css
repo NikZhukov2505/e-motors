@@ -362,6 +362,12 @@
 
 @media (max-width:768px) {
 
+
+    .card h2 {
+        line-height: 20px;
+
+    }
+
     .loader {
         flex: 0 1 100%;
     }
@@ -439,9 +445,15 @@
         transition: 0.5s;
     }
 
+
+
 }
 
 @media (max-width:425px) {
+    .card {
+        height: 325px;
+    }
+
     .container {
         margin: 20px auto;
     }

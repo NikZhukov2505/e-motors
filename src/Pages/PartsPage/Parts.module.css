@@ -269,8 +269,8 @@
     }
 
     .price_block a {
-        font-size: 14px;
-        width: 120px;
+        font-size: 13px;
+        width: 105px;
     }
 
     .part_img {
@@ -445,11 +445,41 @@
         width: 90px;
     }
 
+    .card h2 {
+        line-height: 20px;
+
+    }
 }
 
 @media (max-width:425px) {
+
+
     .part_img {
         height: 130px;
+    }
+
+    .card h2 {
+        font-size: 12px;
+        padding: 0 10px;
+        line-height: 20px;
+    }
+
+    .info_block {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .price_block h3 {
+        font-size: 12px;
+    }
+
+    .price_block {
+        padding: 0 10px;
+    }
+
+    .price_block a {
+        font-size: 9px;
+        width: 70px;
     }
 }
 
