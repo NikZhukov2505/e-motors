@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const PartsCard = ({ item }) => {
     return (
-        <div className={`${styles.card} animate__animated ${window.screen.width <= 992 ? 'animate__fadeInUp' : ' animate__fadeInRight '}`}>
+        <Link to={window.screen.width <= 768 ? `/detail-motors/${item?.id}` : null} className={`${styles.card} animate__animated ${window.screen.width <= 992 ? 'animate__fadeInUp' : ' animate__fadeInRight '}`}>
             <Link to={`/detail-parts/${item?.id}`}>
                 <img className={styles.part_img} src={item?.image} alt="motors" />
                 {item?.in_stock ? <img title='В наличии' id={styles.stock} src={stock} alt='inStock' /> : null}
@@ -13,9 +13,9 @@ const PartsCard = ({ item }) => {
             <h2>{item.name}</h2>
             <div className={styles.price_block}>
                 <h3>{item?.price}</h3>
-                <Link to={`/detail-parts/${item?.id}`}>Подробнее</Link>
+                <Link style={{ display: window.screen.width <= 768 ? 'none' : '' }} to={`/detail-parts/${item?.id}`}>Подробнее</Link>
             </div>
-        </div>
+        </Link>
     );
 };
 
