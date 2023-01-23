@@ -28,23 +28,28 @@ const DetailPageParts = () => {
             <div className={styles.container}>
                 {isLoading && <Loader />}
                 <div className={styles.box_character}>
-                    <div className={styles.box_character_img}>
-                        <SwiperDetailParts images={detailParts?.images || []} image={detailParts?.image} />
-                    </div>
-                    <div className={styles.box_character_title}>
-                        <div className={styles.title_character}>
-                            <h2>{detailParts?.name}</h2>
-                        </div>
-                        <div className={styles.price_block}>
-                            <p className={styles.price_text}>Цена:</p>
-                            <h2 className={styles.price}>{detailParts?.price}</h2>
-                        </div>
-                        <div className={styles.title_character}>
-                            <a href={info.whatsapp}>
-                                <button>заказать</button>
-                            </a>
-                        </div>
-                    </div>
+                    {
+                        detailParts &&
+                        <>
+                            <div className={styles.box_character_img}>
+                                <SwiperDetailParts images={detailParts?.images || []} image={detailParts?.image} />
+                            </div>
+                            <div className={styles.box_character_title}>
+                                <div className={styles.title_character}>
+                                    <h2>{detailParts?.name}</h2>
+                                </div>
+                                <div className={styles.price_block}>
+                                    <p className={styles.price_text}>Цена:</p>
+                                    <h2 className={styles.price}>{detailParts?.price}</h2>
+                                </div>
+                                <div className={styles.title_character}>
+                                    <a href={info.whatsapp}>
+                                        <button>заказать</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </>
+                    }
                 </div>
                 <DetailSpareParts description={detailParts?.description} />
             </div>
