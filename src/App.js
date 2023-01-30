@@ -36,6 +36,10 @@ const App = () => {
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
+        <div className='itc_ref_box'>
+          Разработано:⠀⠀
+          <a className='itc_ref' target="_blank" href="http://itcdevs.com/">ITC Devs&reg;</a>
+        </div>
       </HelmetProvider>
     </>
   );
