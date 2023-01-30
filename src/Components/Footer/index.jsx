@@ -39,8 +39,8 @@ const Footer = () => {
                         <a href={info.whatsapp} target="_blank"><img src={whatsapp} alt="whatsapp" /></a>
                         <a href={info.instagram} target="_blank"><img src={instagram} alt="instagram" /></a>
                     </div>
-
                 </div>
+
             </div>
         </footer>
     );
