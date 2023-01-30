@@ -50,3 +50,9 @@ body::-webkit-scrollbar-thumb:hover {
 .itc_ref {
     color: #fff;
 }
+
+@media (max-width:425px) {
+    .itc_ref_box {
+        font-size: 15px;
+    }
+}
