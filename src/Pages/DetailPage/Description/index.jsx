@@ -9,7 +9,7 @@ const Description = ({ description }) => {
                 <h2>Описание</h2>
             </div>
             <div className={styles.wrapper_text}>
-                <p>{description}</p>
+                <p className='notranslate'>{description}</p>
             </div>
         </div>
     );
