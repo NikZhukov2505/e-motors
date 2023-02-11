@@ -47,7 +47,8 @@ const DetailPage = () => {
                                         <p className={styles?.title}>Наличие:</p>
                                         <span className={styles.title_name}>{detailAuto?.in_stock ? 'В наличии' : 'Под заказ'}</span>
                                     </div>
-                                    <Feature name={'Крутящий момент Н·м:'} description={detailAuto?.torque} />
+                                    <Feature name={'Мощность электромотора кВт/ч:'} description={detailAuto?.torque} />
+                                    <Feature name={'Емкость батареи кВт/ч:'} description={detailAuto?.battery_capacity} />
                                     <Feature name={'Макс. скорость км/ч:'} description={detailAuto?.max_speed} />
                                     <Feature name={'Тип кузова электромобиля:'} description={detailAuto?.type_body} />
                                     <Feature name={'Тип привода:'} description={detailAuto?.type_drive} />
@@ -62,6 +63,7 @@ const DetailPage = () => {
                                     <a href={info?.whatsapp}>
                                         <button>заказать</button>
                                     </a>
+
                                 </div>
                             </div>
                         </>
