@@ -18,7 +18,7 @@ const Footer = () => {
                         duration={1500}
                         to={'top'}
                     >
-                        <img className={styles.btn_scroll_up} src={`http://176.126.166.199:8000${info.logo}`} alt="logo" />
+                        <img className={styles.btn_scroll_up} src={`http://195.38.164.113:8000${info.logo}`} alt="logo" />
                     </Link>
                 </div>
                 <div className={styles.box_contact}>

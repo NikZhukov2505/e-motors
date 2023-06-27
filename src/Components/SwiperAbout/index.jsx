@@ -27,7 +27,7 @@ const SwiperAbout = () => {
             <SwiperSlide>
                 <div className='slideAbout-Card'>
                     <div className="about_box-img">
-                        <img src={`http://176.126.166.199:8000${info?.about_image}`} alt="honda" />
+                        <img src={`http://195.38.164.113:8000${info?.about_image}`} alt="honda" />
                     </div>
                     <div className="about_box-title">
                         <div className="about_center-box-title">
@@ -40,7 +40,7 @@ const SwiperAbout = () => {
             <SwiperSlide>
                 <div className='slideAbout-Card'>
                     <div className="about_box-img">
-                        <img src={`http://176.126.166.199:8000${info?.about_image2}`} alt="teslaSwiperAbout" />
+                        <img src={`http://195.38.164.113:8000${info?.about_image2}`} alt="teslaSwiperAbout" />
                     </div>
                     <div className="about_box-title">
                         <div className="about_center-box-title">
@@ -53,7 +53,7 @@ const SwiperAbout = () => {
             <SwiperSlide>
                 <div className='slideAbout-Card'>
                     <div className="about_box-img">
-                        <img src={`http://176.126.166.199:8000${info?.about_image3}`} alt="teslaSwiperAbout" />
+                        <img src={`http://195.38.164.113:8000${info?.about_image3}`} alt="teslaSwiperAbout" />
                     </div>
                     <div className="about_box-title">
                         <div className="about_center-box-title">

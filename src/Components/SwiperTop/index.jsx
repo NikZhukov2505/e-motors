@@ -30,7 +30,7 @@ const SwiperTop = () => {
                 info?.images?.map((e, i) => (
                     <SwiperSlide key={i}>
                         <div className='slideCard'>
-                            <img src={`http://176.126.166.199:8000${e.image}`} alt="honda" />
+                            <img src={`http://195.38.164.113:8000${e.image}`} alt="honda" />
                         </div>
                     </SwiperSlide>
                 ))

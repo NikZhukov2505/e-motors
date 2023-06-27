@@ -12,7 +12,7 @@ const Header = () => {
         <header className={styles.header}>
             <div id='top' className={styles.header_block}>
                 <div className={styles.logo_block}>
-                    <NavLink to={'/'}><img src={`http://176.126.166.199:8000${info.logo}`} alt="e_motors_logo" /></NavLink>
+                    <NavLink to={'/'}><img src={`http://195.38.164.113:8000${info.logo}`} alt="e_motors_logo" /></NavLink>
                 </div>
                 <BurgerMenu />
 

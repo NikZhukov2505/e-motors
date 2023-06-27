@@ -7,7 +7,8 @@ const store = configureStore({
     reducer: {
         motors: motorsSlice,
         info: infoSlice,
-    }
+    },
+    devTools: false,
 })
 
 export default store;
